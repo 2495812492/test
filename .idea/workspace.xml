@@ -9,46 +9,13 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5541ef52-aba5-4a54-9153-a69b5440d03e" name="Default" comment="老王测试">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/PayItemsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Items.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/MeterType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/payItemsMapper/PayItemsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/PayItemsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/PayItemsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/PayItemsMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/PayItemsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Items.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/MeterType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/payItemsMapper/PayItemsMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/PayItemsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/PayItemsServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/PayItemsMapper.xml" afterDir="false" />
+    <list default="true" id="5541ef52-aba5-4a54-9153-a69b5440d03e" name="Default" comment="老王测试111">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItemsT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItemsT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Payitems.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gpay.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gpay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItemsT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItemsT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Payitems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Payitems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/MenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/gpay.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gpay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Bill.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,13 +75,14 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1574645326919" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/mapper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -309,7 +277,7 @@
       <workItem from="1605576918486" duration="4268000" />
       <workItem from="1605595712314" duration="5200000" />
       <workItem from="1605600982266" duration="11290000" />
-      <workItem from="1605661864207" duration="1435000" />
+      <workItem from="1605661864207" duration="2158000" />
     </task>
     <task id="LOCAL-00001" summary="加入天赐项目">
       <created>1573105378911</created>
@@ -325,7 +293,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573609844147</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="老王测试">
+      <created>1605665954029</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605665954029</updated>
+    </task>
+    <task id="LOCAL-00004" summary="老王测试111">
+      <created>1605666218608</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605666218608</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,7 +328,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="加入天赐项目" />
     <MESSAGE value="老王测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="老王测试" />
+    <MESSAGE value="老王测试111" />
+    <option name="LAST_COMMIT_MESSAGE" value="老王测试111" />
   </component>
   <component name="WindowStateProjectService">
     <state x="163" y="0" key="#Project_Structure" timestamp="1604990005744">
@@ -365,10 +348,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="421" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1605237615487" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1605574341799">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1605666018417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605574341799" />
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605666018417" />
     <state width="1323" height="35" key="GridCell.Tab.0.bottom" timestamp="1605618311713">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -425,10 +408,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605576964403" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605576476900">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605666243944">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605576476900" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605666243944" />
     <state x="482" y="141" key="chooseDestDirectoryDialog" timestamp="1605317030368">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
