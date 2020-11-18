@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加</title>
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
+    <script src="https://www.layuicdn.com/layui/layui.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+<form class="layui-form">
+    <div style="margin-top: 20px;margin-left: 28px;">所属房间：</div>
+    <div class="layui-form-item" style="width:240px;margin-left: 110px; margin-top: -20px;">
+        <select th:name="roomid" lay-verify="">
+            <option th:each="r:${rcs}" th:value="${r.roomid}" th:text="${r.roomno}"></option>
+        </select>
+    </div>
+    <div class="layui-form-item" style="width:350px;">
+        <label class="layui-form-label">投诉人：</label>
+        <div class="layui-input-block">
+            <input type="text" name="complainant" id="complainant" placeholder="请输入投诉人"  class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">投诉时间：</label>
+            <div class="layui-input-inline">
+                <input type="text" class="layui-input" id="complainanttime" name="complainanttime" placeholder="-">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item" style="width:350px;">
+        <label class="layui-form-label">联系方式：</label>
+        <div class="layui-input-block">
+            <input type="text" name="complainantnumber" id="complainantnumber" placeholder="请输入联系方式"  class="layui-input">
+        </div>
+    </div>
+    <div style="margin-top: 20px;margin-left: 28px;">投诉类型：</div>
+    <div class="layui-form-item" style="width:240px;margin-left: 110px; margin-top: -20px;">
+        <select name="complainanttype" lay-verify="">
+            <option value="">请选择投诉类型</option>
+            <option value="一般投诉">一般投诉</option>
+            <option value="严重投诉">严重投诉</option>
+            <option value="服务投诉">服务投诉</option>
+        </select>
+    </div>
+    <div class="layui-form-item" style="width:350px;">
+        <label class="layui-form-label">问题描述：</label>
+        <div class="layui-input-block">
+            <input type="text" name="complainanteventdescription" placeholder="请输入事件描述"  class="layui-input">
+        </div>
+    </div>
+    <!--<div class="layui-tab">
+        <ul class="layui-tab-title">
+            <li class="layui-this">受理信息</li>
+        </ul>
+        <div class="layui-tab-content"  style="width:350px;">
+            <label class="layui-form-label">受理人：</label>
+            <div class="layui-input-block">
+                <select name="dealingwithpeople" lay-verify="">
+                    <option th:each="n:${nName}" th:value="${n.nickname}" th:text="${n.nickname}"></option>
+                </select>
+            </div>
+            <div class="layui-form-item"  style="width:350px;">
+                <label class="layui-form-label">受理备注：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="dealingwithremarks" placeholder="请输入处理备注"  class="layui-input">
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <div style="margin-left: 210px">
+        <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="tijiao">提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+</form>
+</body>
+<script type="text/javascript">
+    layui.use(['form', 'layer', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,laydate = layui.laydate
+            ,$=layui.jquery;//定义$
+            laydate.render({
+            elem: '#complainanttime'
+           ,trigger:'click'
+        });
+        //监听提交
+        form.on('submit(tijiao)', function(data){
+            //data.field表单所有信息
+            if($("#complainant").val()==""){
+                alert("投诉人不能为空！") ;
+                return false;
+            }
+
+            if($("#price").val()>=1000){
+                return false;
+            }else {
+                $.post("add_do2",data.field,function(result)
+                    {
+                        layer.msg(result.msg, {
+                            icon: 1,
+                            time: 1000 //2秒关闭（如果不配置，默认是3秒）
+                        }, function(){
+                            //刷新父页面
+                            parent.window.location.reload();
+                        });
+                    }
+                );
+            }
+            //阻止form表单提交
+            return false;
+        });
+    });
+</script>
+</html>

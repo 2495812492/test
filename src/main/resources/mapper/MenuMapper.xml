@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.menuMapper.MenuMapper">
+
+    <resultMap id="showMenuMap" type="ShowMenuVo">
+        <result property="id"       column="id" />
+        <result property="pid"      column="pid"/>
+        <result property="title"    column="title"/>
+        <result property="icon"     column="icon"/>
+        <result property="href"     column="href"/>
+
+        <collection property="children" select="selectShowMenuByUser"  column="{parentId = id,userId = myuserId}">
+        </collection>
+    </resultMap>
+
+    <select id="selectShowMenuByUser" resultMap="showMenuMap" parameterType="java.util.Map">
+        SELECT
+        distinct m.id as "id",
+        m.parent_id as "pid",
+        m.name as "title",
+        m.icon as "icon",
+        IFNULL(m.href, '#') as "href",
+        m.sort,
+        #{userId}  as "myuserId"
+        FROM
+        (select * from sys_menu where del_flag = FALSE ) m
+        LEFT JOIN sys_role_menu srm on srm.menu_id = m.id
+        LEFT JOIN sys_role r on r.id = srm.role_id
+        LEFT JOIN sys_user_role sur on sur.role_id = r.id
+        LEFT JOIN sys_user u on u.id = sur.user_id
+        WHERE
+        u.id = #{userId}
+        <choose>
+            <when test="parentId != null and parentId !='' ">
+                and m.parent_id = #{parentId}
+            </when>
+            <otherwise>
+                and m.parent_id is NULL
+            </otherwise>
+        </choose>
+        and m.is_show = true
+        order by m.sort desc
+    </select>
+
+    <resultMap type="Menu" id="resultMenus">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="parentId" column="parentId"/>
+        <result property="level" column="level"/>
+        <result property="sort" column="sort"/>
+        <result property="href" column="href"/>
+        <result property="icon" column="icon"/>
+        <result property="isShow" column="isShow"/>
+        <result property="permission" column="permission"/>
+        <result property="createId" column="createId"/>
+        <result property="createDate" column="createDate"/>
+        <result property="updateId" column="updateId"/>
+        <result property="updateDate" column="updateDate"/>
+        <result property="remarks" column="remarks"/>
+        <result property="delFlag" column="delFlag"/>
+        <!--使用collection对protected List<Menu> children; //子菜单集合属性
+           select="getMenus" 递规查询或子查询，用于查询当前一级菜单对象下的子菜单集合。
+           column="{parentId = id,isShow = myIsShow}" 为调用递规查询时传递的参数
+           格式为：column="参数名=字段名,参数名2=字段名2"
+        -->
+        <collection property="children" select="getMenus" column="{parentId = id,isShow = myIsShow}">
+        </collection>
+    </resultMap>
+
+    <select id="getMenus" resultMap="resultMenus" parameterType="java.util.Map">
+        select
+        id,
+        name,
+        parent_id as "parentId",
+        level,
+        sort,
+        IFNULL(href, '#') AS "href",
+        icon,
+        is_show as "isShow",
+        permission,
+        create_by as "createId",
+        create_date as "createDate",
+        update_by as "updateId",
+        update_date as "updateDate",
+        remarks,
+        del_flag as "delFlag",
+        #{isShow} as "myIsShow" from sys_menu where
+        del_flag = false
+        <choose>
+            <!--  如果当前菜单的parentId即父级菜单ID值不为空,就通过这个父级菜单ID查询其下的所有子级菜单 -->
+            <when test="parentId != null and parentId!='' ">
+                and parent_id = #{parentId}
+            </when>
+            <!--  如果当前菜单parentId为null，即当前菜单没有父级ID，它自己就是一级菜单，一级菜单的parent_id为NULL -->
+            <otherwise>
+                and parent_id is NULL
+            </otherwise>
+        </choose>
+        <if test="isShow == true">
+            and is_show = #{isShow}
+        </if>
+        order by sort desc
+    </select>
+
+</mapper>

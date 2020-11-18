@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.yunhan.admin.AdminApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.083 s <<< FAILURE! - in com.yunhan.admin.AdminApplicationTests
+contextLoads(com.yunhan.admin.AdminApplicationTests)  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'captchaController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.google.code.kaptcha.Producer' available: expected single matching bean but found 2: captchaProducer,kaptcha
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.google.code.kaptcha.Producer' available: expected single matching bean but found 2: captchaProducer,kaptcha
+

@@ -1,0 +1,61 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yunhan.mapper.payItemsMapper.PayItemsMapper">
+
+    <resultMap id="payMap" type="PayItems">
+        <id property="id" column="id"/>
+        <result property="patitemsName" column="patitemsName"/>
+        <result property="payitemsmoney" column="payitemsmoney"/>
+        <result property="createDate" column="create_date"/>
+        <result property="delFlag" column="del_flag"/>
+
+        <!--使用assocation配置多一对，完成对private MeterType meterType;的映射-->
+        <association property="meterType" javaType="MeterType">
+            <result property="metertType" column="m.metertType"/>
+        </association>
+        <!--使用assocation配置多一对，完成对private PayItemsType payItemsType;的映射-->
+        <association property="payItemsType" javaType="PayItemsT">
+            <result property="patitemstName" column="pt.patitemstName"/>
+        </association>
+        <!--使用assocation配置多一对，完成对 private Items items;的映射-->
+        <association property="items" javaType="Items">
+            <result property="itemsname" column="i.itemsname"/>
+        </association>
+    </resultMap>
+
+    <!--通过map集合中的参数查询收费项目列表信息-->
+    <select id="getPayListPage" parameterType="java.util.Map" resultMap="payMap">
+        SELECT p.`id`,p.`patitemsName`,p.`payitemsmoney`,p.`create_date`
+        ,pt.`patitemstName` AS "pt.patitemstName",m.`metertType` AS "m.metertType",
+        i.`itemsname` AS "i.itemsname"
+        FROM payitems p
+        LEFT JOIN metert m ON p.metertID = m.id
+        LEFT JOIN payitemst pt ON p.payitemstId = pt.id
+        LEFT JOIN  items i ON i.id = p.itemsid
+        <where>
+            p.del_flag = 0
+            <if test="patitemstName!=null and patitemstName!=''">
+                and pt.patitemstName like concat('%',concat(#{patitemstName},'%'))
+            </if>
+        </where>
+        LIMIT #{first},#{pageSize}
+    </select>
+
+
+    <!--分页查询收费项目总记录数-->
+    <select id="getCountPayListPage" resultType="long" parameterType="PayItemsT">
+        SELECT count(1)
+        FROM payitems p
+        LEFT JOIN metert m ON p.metertID = m.id
+        LEFT JOIN payitemst pt ON p.payitemstId = pt.id
+        LEFT JOIN  items i ON i.id = p.itemsid
+        <where>
+            p.del_flag = 0
+            <if test="patitemstName!=null and patitemstName!=''">
+                and pt.patitemstName like concat('%',concat(#{patitemstName},'%'))
+            </if>
+        </where>
+    </select>
+</mapper>
