@@ -45,13 +45,38 @@
             , cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
-                    , {field: 'payitemsId', title: '编号', width: 80, sort: true}
+                    , {field: 'id', title: '编号', width: 80, sort: true}
                     , {field: 'patitemsName', title: '收费项目名称', width: 150}
-                    , {field: 'patitemstName', title: '费用类型', width: 150}
-                    , {field: 'metertType', title: '仪表信息', width: 150, sort: true}
+                    , {field: 'patitemstName', title: '费用类型', width: 150,
+                        templet: function(d){
+                            if (d.payitemst != null && d.payitemst.patitemstName != null) {
+                                return '<span>' + d.payitemst.patitemstName + "</span>";
+                            } else {
+                                return '<span>无数据</span>';
+                            }
+                        }
+                    }
+                    , {field: 'metertType', title: '仪表信息', width: 150, sort: true,
+                        templet: function(d){
+                            if (d.metert != null && d.metert.metertType != null) {
+                                return '<span>' + d.metert.metertType + "</span>";
+                            } else {
+                                return '<span>无数据</span>';
+                            }
+                        }
+                    }
                     , {field: 'payitemsmoney', title: '执行金额', width: 150}
                     , {field: 'begintime', title: '使用时间', width: 150}
-                    , {field: 'itemsname', title: '收费方案', width: 150, sort: true}
+                    , {field: 'itemsname', title: '收费方案', width: 150, sort: true,
+                        templet: function(d){
+                            if (d.items != null && d.items.itemsname != null) {
+                                return '<span>' + d.items.itemsname + "</span>";
+                            } else {
+                                return '<span>无数据</span>';
+                            }
+                        }
+
+                    }
                     , {fixed: 'right', width: 165, align: 'center', toolbar: '#barDemo'}
                 ]
             ]
@@ -121,7 +146,7 @@
                     curr: 1 //重新从第 1 页开始
                 }
                 , where: {
-                    'payItemsType.patitemstName': demoReload.val()
+                    'payitemst.patitemstName': demoReload.val()
                 }
             });
         });

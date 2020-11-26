@@ -6,6 +6,7 @@ import com.yunhan.entity.Menu;
 import com.yunhan.entity.ShowMenuVo;
 import com.yunhan.entity.User;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -30,4 +31,6 @@ public interface MenuService extends IService<Menu> {
     Integer seleclMenuMaxSortByPArentId(String parentId);
     //保存或更新菜单对象信息
     void saveOrUpdateMenu(Menu menu);
+
+    List<Menu> getAllMenuList(Map<String,Object> map);
 }

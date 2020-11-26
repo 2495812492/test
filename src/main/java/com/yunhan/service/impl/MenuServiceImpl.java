@@ -19,7 +19,7 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
 
     @Override
     public Object getObj(QueryWrapper<Menu> parent_id) {
-        return baseMapper.selectList(parent_id);
+        return baseMapper.selectOne(parent_id);
     }
 
     @Override
@@ -76,6 +76,11 @@ public class MenuServiceImpl extends ServiceImpl<MenuMapper, Menu> implements Me
     @Transactional(rollbackFor = Exception.class)
     public void saveOrUpdateMenu(Menu menu) {
         saveOrUpdate(menu);
+    }
+
+    @Override
+    public List<Menu> getAllMenuList(Map<String, Object> map) {
+        return baseMapper.selectByMap(map);
     }
 
 }

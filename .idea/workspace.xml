@@ -13,9 +13,60 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5541ef52-aba5-4a54-9153-a69b5440d03e" name="Default" comment="老王测试111">
+    <list default="true" id="5541ef52-aba5-4a54-9153-a69b5440d03e" name="Default" comment="老王测试1116">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Metert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/common/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/common/shiro/MyShiroRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/common/util/Encodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/common/util/Encodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/PayItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/PayItemsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/MeterType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/payItemsMapper/PayItemsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/payItemsMapper/PayItemsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/userMapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/userMapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/PayItemsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/PayItemsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/PayItemsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/PayItemsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PayItemsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PayItemsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/role/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/role/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/userInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gpay.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gpay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/common/shiro/MyShiroRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/common/shiro/MyShiroRealm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/common/util/Encodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/common/util/Encodes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController$LoginTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController$LoginTypeEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/PayItemsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/PayItemsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Items.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Items.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/MeterType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/payItemsMapper/PayItemsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/payItemsMapper/PayItemsMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/userMapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/userMapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/MenuService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/PayItemsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/PayItemsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/RoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/MenuServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/PayItemsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/PayItemsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PayItemsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PayItemsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/role/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/role/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user/userInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/gpay.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gpay.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +87,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -93,8 +145,12 @@
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bdqn\Y2\02-SpringBoot\yunhan\src\main\resources\mapper" />
+      <recent name="D:\bdqn\Y2\02-SpringBoot\yunhan\src\main\java\com\yunhan\mapper\menuMapper" />
+      <recent name="E:\Idea-project\yunhan\src\main\resources\mapper" />
       <recent name="E:\Idea-project\yunhan\src\main\resources\templates" />
+      <recent name="D:\YunHanProject\yunhan\src\main\resources\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.yunhan.common.util" />
@@ -103,17 +159,27 @@
       <recent name="com.yunhan.service.impl" />
       <recent name="com.yunhan.service" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bdqn\Y2\02-SpringBoot\yunhan\src\main\resources\mapper" />
-      <recent name="D:\bdqn\Y2\02-SpringBoot\yunhan\src\main\java\com\yunhan\mapper\menuMapper" />
-      <recent name="E:\Idea-project\yunhan\src\main\resources\mapper" />
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Idea-project\yunhan\src\main\resources\templates" />
-      <recent name="D:\YunHanProject\yunhan\src\main\resources\mapper" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.AdminApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Encodes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yunhan.common.util.Encodes" />
+      <module name="comadmin" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yunhan.common.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,6 +254,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.AdminApplication" />
+        <item itemvalue="Application.Encodes" />
         <item itemvalue="JUnit.AdminApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
@@ -277,7 +344,19 @@
       <workItem from="1605576918486" duration="4268000" />
       <workItem from="1605595712314" duration="5200000" />
       <workItem from="1605600982266" duration="11290000" />
-      <workItem from="1605661864207" duration="2158000" />
+      <workItem from="1605661864207" duration="4122000" />
+      <workItem from="1605745234236" duration="11325000" />
+      <workItem from="1605765136893" duration="17233000" />
+      <workItem from="1605836697217" duration="5249000" />
+      <workItem from="1605850174451" duration="23608000" />
+      <workItem from="1605918002397" duration="12150000" />
+      <workItem from="1605937929082" duration="9352000" />
+      <workItem from="1606098922032" duration="5617000" />
+      <workItem from="1606177235084" duration="7842000" />
+      <workItem from="1606197246151" duration="16490000" />
+      <workItem from="1606264202763" duration="7660000" />
+      <workItem from="1606349938252" duration="5635000" />
+      <workItem from="1606369727518" duration="7811000" />
     </task>
     <task id="LOCAL-00001" summary="加入天赐项目">
       <created>1573105378911</created>
@@ -307,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605666218608</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="老王测试1116">
+      <created>1605666639427</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605666639427</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,101 +415,122 @@
     <MESSAGE value="加入天赐项目" />
     <MESSAGE value="老王测试" />
     <MESSAGE value="老王测试111" />
-    <option name="LAST_COMMIT_MESSAGE" value="老王测试111" />
+    <MESSAGE value="老王测试1116" />
+    <option name="LAST_COMMIT_MESSAGE" value="老王测试1116" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="275" y="5" key="#Plugins" timestamp="1606178365287">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="5" key="#Plugins/0.0.1366.728@0.0.1366.728" timestamp="1606178365287" />
     <state x="163" y="0" key="#Project_Structure" timestamp="1604990005744">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1604990005744" />
-    <state x="488" y="69" key="#com.intellij.ide.util.MemberChooser" timestamp="1605604085145">
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606215006548">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="69" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1605604085145" />
+    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606215006548" />
+    <state x="488" y="69" key="#com.intellij.ide.util.MemberChooser" timestamp="1606199760824">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="69" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1606199760824" />
+    <state x="459" y="231" width="447" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1605861957056">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="459" y="231" width="447" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1366.728@0.0.1366.728" timestamp="1605861957056" />
+    <state x="404" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1605754827721">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="404" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1605754827721" />
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605596270520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1605596270520" />
-    <state width="421" height="438" key="DebuggerActiveHint" timestamp="1605237615487">
+    <state width="451" height="438" key="DebuggerActiveHint" timestamp="1605928527457">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="421" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1605237615487" />
+    <state width="451" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1605928527457" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1605666018417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605666018417" />
-    <state width="1323" height="35" key="GridCell.Tab.0.bottom" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.0.bottom" timestamp="1606363216583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="35" key="GridCell.Tab.0.center" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1323" height="166" key="GridCell.Tab.0.center" timestamp="1606363216583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="35" key="GridCell.Tab.0.left" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1323" height="166" key="GridCell.Tab.0.left" timestamp="1606363216582">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="35" key="GridCell.Tab.0.right" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606363216582" />
+    <state width="1323" height="166" key="GridCell.Tab.0.right" timestamp="1606363216583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="35" key="GridCell.Tab.1.bottom" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1323" height="166" key="GridCell.Tab.1.bottom" timestamp="1606363216583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="35" key="GridCell.Tab.1.center" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1323" height="166" key="GridCell.Tab.1.center" timestamp="1606363216583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="35" key="GridCell.Tab.1.left" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1323" height="166" key="GridCell.Tab.1.left" timestamp="1606363216583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="35" key="GridCell.Tab.1.right" timestamp="1605618311713">
+    <state width="1323" height="166" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1323" height="166" key="GridCell.Tab.1.right" timestamp="1606363216583">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="35" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1605618311713" />
-    <state width="1323" height="137" key="GridCell.Tab.2.bottom" timestamp="1605240535674">
+    <state width="1323" height="166" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1323" height="214" key="GridCell.Tab.2.bottom" timestamp="1606276623770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1605240535674" />
-    <state width="1323" height="137" key="GridCell.Tab.2.center" timestamp="1605240535674">
+    <state width="1323" height="214" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606276623770" />
+    <state width="1323" height="214" key="GridCell.Tab.2.center" timestamp="1606276623770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1605240535674" />
-    <state width="1323" height="137" key="GridCell.Tab.2.left" timestamp="1605240535674">
+    <state width="1323" height="214" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1606276623770" />
+    <state width="1323" height="214" key="GridCell.Tab.2.left" timestamp="1606276623770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1605240535674" />
-    <state width="1323" height="137" key="GridCell.Tab.2.right" timestamp="1605240535674">
+    <state width="1323" height="214" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1606276623770" />
+    <state width="1323" height="214" key="GridCell.Tab.2.right" timestamp="1606276623770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1605240535674" />
+    <state width="1323" height="214" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1606276623770" />
     <state x="213" y="19" key="Maven.ArtifactSearchDialog" timestamp="1605150373767">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1605150373767" />
-    <state x="184" y="8" key="SettingsEditor" timestamp="1605576964403">
+    <state x="184" y="8" key="SettingsEditor" timestamp="1605748610523">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605576964403" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605666243944">
+    <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605748610523" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605666642142">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605666243944" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1605666642142" />
     <state x="482" y="141" key="chooseDestDirectoryDialog" timestamp="1605317030368">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="141" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1605317030368" />
+    <state x="486" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606386426374">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="486" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606386426374" />
     <state x="385" y="0" width="596" height="728" key="find.popup" timestamp="1605323095840">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="385" y="0" width="596" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1605323095840" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1605489429884">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606100052976">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1605489429884" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606100052976" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -435,5 +542,17 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="token.getCredentials()" />
+        <watch expression="this.getHashIterations()" />
+        <watch expression="this.getSalt(token)" />
+        <watch expression="this.hashProvidedCredentials(token.getCredentials(), salt, this.getHashIterations())" />
+        <watch expression="encodeHex(salt)" />
+        <watch expression="ByteSource.Util.bytes(user.getSalt())" />
+        <watch expression="new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations)" />
+        <watch expression="md5Hash.toString()" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

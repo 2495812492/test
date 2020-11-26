@@ -12,5 +12,5 @@ public interface PayItemsMapper extends BaseMapper<PayItems>{
     List<PayItems> getPayListPage(Map<String, Object> map);
 
     //分页查询收费项目总记录数
-    Long getCountPayListPage(PayItemsT patitemstName);
+    Long getCountPayListPage(PayItems payItems);
 }

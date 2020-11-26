@@ -11,5 +11,5 @@ public interface PayItemsService extends IService<PayItems> {
     List<PayItems> getPayListPage(Integer page, Integer limit, PayItems payItems);
 
     //分页查询收费项目总记录数
-    Long getCountPayListPage(PayItemsT payItems);
+    Long getCountPayListPage(PayItems payItems);
 }

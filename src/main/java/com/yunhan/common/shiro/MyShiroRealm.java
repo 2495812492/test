@@ -6,11 +6,15 @@ import com.yunhan.common.util.Constants;
 import com.yunhan.common.util.Encodes;
 import com.yunhan.entity.Menu;
 import com.yunhan.entity.User;
-import com.yunhan.service.MenuService;
+import com.yunhan.mapper.userMapper.UserMapper;
 import com.yunhan.service.UserService;
+import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
+import org.apache.shiro.cache.Cache;
+import org.apache.shiro.cache.CacheManager;
+import org.apache.shiro.cache.CacheManagerAware;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
@@ -18,6 +22,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +32,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     private UserService userService;
 
     @Resource
-    private MenuService menuService;
+    private UserMapper userMapper;
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;  //是用于对redis中String类型的数据进行增删改查
@@ -51,7 +57,7 @@ public class MyShiroRealm extends AuthorizingRealm {
         UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
         //2、分别匹配保存到UsernamePasswordToken里的用户名和密码(注： 此时的用户名和密码是从doLogin方法中提交过来的)
         String usrName = token.getUsername();  //得到用户名
-        String password = new String(token.getPassword());  //得到密码。
+        //String password = new String(token.getPassword());  //得到密码。
         /**********START 密码登录失限制 START**********/
         ValueOperations<String,String> opsForValue = stringRedisTemplate.opsForValue();
         //1、创建计数器， 记录当前用户的登录次数
@@ -101,7 +107,9 @@ public class MyShiroRealm extends AuthorizingRealm {
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         // getPrimaryPrincipal()：得到登录认证方法返回值的第一个参数的值
         User user = Encodes.getLoginUser();
-
+        Map map = new HashMap();
+        map.put("id",user.getId());
+        user = userMapper.selectUserByMap(map);
         Set<Menu> menus = user.getMenus();
         for(Menu menu : menus) {
             if (StringUtils.isNotEmpty(menu.getPermission())) {
@@ -110,6 +118,22 @@ public class MyShiroRealm extends AuthorizingRealm {
             }
         }
         return info;
+    }
+
+    //清空当前认证用户权限缓存
+    public void clearMyCachedAuthorizationInfo(){
+        //clearCachedAuthorizationInfo(SecurityUtils.getSubject().getPrincipals());
+        if(this.isAuthorizationCachingEnabled()){//权限缓存是否可用
+            Cache<Object,AuthorizationInfo> cache = null;
+            CacheManager cacheManager = this.getCacheManager();
+            if(cacheManager != null){
+                String cacheName = this.getAuthorizationCacheName();//获得权限缓存名称
+                cache = cacheManager.getCache(cacheName);//获得权限缓存
+            }
+            if(cache != null){
+                cache.clear();//清空
+            }
+        }
     }
 }
 

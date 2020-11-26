@@ -209,6 +209,12 @@ layui.config({
 
     // 添加新窗口
     $("body").on("click",".layui-nav .layui-nav-item a",function(){
+        if ($(this).find("cite").text() == "权限刷新") {
+            //$.getJSON($(this).get(0).dataset.url)
+            window.location.href = $(this).get(0).dataset.url;
+            tab.render();
+            return ;
+        }
         //如果不存在子级
         if($(this).siblings().length == 0){
             addTab($(this));

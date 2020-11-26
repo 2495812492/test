@@ -29,11 +29,8 @@ public class PayItemsController {
             @RequestParam(value = "page",defaultValue = "1")Integer page,
             @RequestParam(value = "limit",defaultValue = "10")Integer limit,
             PayItems payItems){
-        PayItemsT u=new PayItemsT();
-        u.setPatitemstName(payItems.getPayItemsType().getPatitemstName());
         PageData<PayItems> payItemsPageData = new PageData<PayItems>();
-        Long count = payItemsService.getCountPayListPage(u);
-        System.out.println("count------------:"+count);
+        Long count = payItemsService.getCountPayListPage(payItems);
         //2、调用service的getPayListPage方法，实现分页查询收费项目列表信息
         List<PayItems> payList= payItemsService.getPayListPage(page, limit, payItems);
         payItemsPageData.setData(payList);

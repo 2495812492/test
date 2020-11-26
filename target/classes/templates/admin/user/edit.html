@@ -63,7 +63,7 @@
                 <fieldset class="layui-elem-field">
                     <legend>选择角色</legend>
                     <div class="layui-field-box" th:each="role : ${roleList}">
-                        <input type="checkbox" name="roles"  th:value="${role.id}" th:title="${role.name}" lay-filter="role" th:checked="${#strings.contains(roleIds,role.id)} ? checked" />
+                        <input type="checkbox" name="roles"  th:value="${role.id}" th:title="${role.name}" lay-filter="role" th:checked="(${#strings.contains(roleIds,role.id)}) ? checked" />
                     </div>
                 </fieldset>
             </div>

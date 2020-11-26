@@ -48,12 +48,12 @@
     <div class="layui-form-item">
         <label class="layui-form-label">自我介绍</label>
         <div class="layui-input-block">
-            <textarea placeholder="请输入内容" class="layui-textarea myself" name="remarks" th:value="${userinfo.remarks}"></textarea>
+            <textarea placeholder="请输入内容" class="layui-textarea myself" name="remarks" th:text="${userinfo.remarks}"></textarea>
         </div>
     </div>
     </div>
     <div class="user_right">
-        <input type="hidden"  name="icon"  th:value="${userinfo.icon}" >
+        <input type="hidden"  name="icon" id="hidIcon" th:value="${userinfo.icon}" >
         <button type="button" class="layui-btn layui-btn-normal" id="updateFace"><i class="layui-icon"></i>来来来，换个脸怎么样</button>
         <img th:src="(${#strings.isEmpty(userinfo.icon)}) ? ${session.icon} : ${userinfo.icon}" class="layui-circle" th:id="userFace">
     </div>

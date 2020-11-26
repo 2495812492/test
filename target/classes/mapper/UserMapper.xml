@@ -79,12 +79,20 @@
         </if>
     </select>
     <!--为指定用户添加多个角色权限 -->
-    <select id="saveUserRoles">
+    <insert id="saveUserRoles">
         insert into sys_user_role(user_id,role_id)
         values
-        <foreach collection="roleIds" item="item" index="index" separator="," >
+        <foreach collection="roles" item="item" index="index" separator="," >
             (#{userId},#{item.id})
         </foreach>
+    </insert>
+
+    <select id="userCount" resultType="Integer">
+        select count(1) from sys_user where del_flag = 0
+        <if test="_parameter != null and _parameter != ''">
+            AND tel LIKE CONCAT('%',#{str},'%') OR email LIKE CONCAT('%',#{str},'%')
+            OR login_name LIKE CONCAT('%',#{str},'%')
+        </if>
     </select>
     <!--删除指定用户的所有角色权限 -->
     <delete id="dropUserRolesByUserId" parameterType="java.lang.String">

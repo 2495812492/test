@@ -1,6 +1,7 @@
 package com.yunhan.common.util;
 
 
+import com.google.common.io.ByteSource;
 import com.yunhan.entity.User;
 import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.StringEscapeUtils;
@@ -159,8 +160,13 @@ public class Encodes {
         byte[] salt = new byte[Constants.SALT_SIZE];
         random.nextBytes(salt);
         user.setSalt(encodeHex(salt));
-        Md5Hash md5Hash = new Md5Hash(user.getPassword(),salt,1);
+        Md5Hash md5Hash = new Md5Hash(user.getPassword(),user.getSalt(),1);
         user.setPassword(md5Hash.toString());
+    }
+
+    public static void main(String[] args) {
+        Md5Hash md5Hash = new Md5Hash("123456","729489789ff747e8",1);
+        System.out.println(md5Hash.toString());
     }
 
     public static byte[] sha1(byte[] input, String algorithm, byte[] salt, int iterations) throws RuntimeException {

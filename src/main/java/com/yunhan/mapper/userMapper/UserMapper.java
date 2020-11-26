@@ -12,7 +12,9 @@ public interface UserMapper extends BaseMapper<User> {
     //按登录名、用户名ID查询用户详细信息
     User selectUserByMap(Map<String,Object> map);
     //向sys_user_role表新增数据
-    void saveUserRoles(@Param("userId")String id, @Param("roleIds") Set<Role> roles);
+    void saveUserRoles(@Param("userId")String userId, @Param("roleIds") Set<Role> roles);
     //通过用户ID删除向sys_user_role表删除指定数据
     void dropUserRolesByUserId(@Param("userId")String id);
+    //验证登录名、邮箱和手机号
+    Integer userCount(@Param("str")String str);
 }

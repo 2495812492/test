@@ -1,6 +1,7 @@
 package com.yunhan.controller;
 
 import com.yunhan.common.annotation.SysLog;
+import com.yunhan.common.shiro.MyShiroRealm;
 import com.yunhan.common.util.Constants;
 import com.yunhan.common.util.Encodes;
 import com.yunhan.common.util.ResponseEntity;
@@ -13,6 +14,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.DisabledAccountException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.mgt.RealmSecurityManager;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -89,7 +91,6 @@ public class LoginController {
             return ResponseEntity.failure("验证码错误");
         }else {
             /*当前用户*/
-            String errorMsg = null;
             ValueOperations<String, String> opsForValue = stringRedisTemplate.opsForValue();
             //1、获取登录主体对象
             Subject curruser = SecurityUtils.getSubject();
@@ -105,6 +106,10 @@ public class LoginController {
                 //user = userService.getUser(currentUser.getPrincipal().toString());
                 //5、将登录认证成功后的用户对象保存到Sesssion作用域中,以"currentUser"为key
                 session.setAttribute(Constants.CURRENT_USER, user);
+                //清空权限缓存
+                /*RealmSecurityManager realmSecurityManager = (RealmSecurityManager)SecurityUtils.getSecurityManager();
+                MyShiroRealm realm = (MyShiroRealm)realmSecurityManager.getRealms().iterator().next();
+                realm.clearMyCachedAuthorizationInfo();*/
                 //当登录成功后，清空登录计数
                 opsForValue.set(SHIRO_LOGIN_COUNT + username, "0");
 
