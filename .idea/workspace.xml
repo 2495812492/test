@@ -14,59 +14,164 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5541ef52-aba5-4a54-9153-a69b5440d03e" name="Default" comment="老王测试1116">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Metert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/CarPortController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/ClientMessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/GmdLouController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/RoomController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/CarPort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/CarportType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/ClientMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Educations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/carPortMapper/CarPortMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/carPortTypeMapper/CarPortTypeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/clientMessagesMapper/ClientMessagesMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/educationMapper/EducationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/gmdlouMapper/GmdLouMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/loucengMapper/LouCengMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/roomMapper/RoomMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/CarPortService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/CarPortTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/ClientMessageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/EducationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/GmdLouService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/LouCengService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/RoomService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/CarPortServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/CarPortTypeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/ClientMessageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/EducationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/GmdLouServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/LouCengServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/RoomServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/CarPortMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ClientMessagesMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/GmdLouMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/RoomMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/admin/js/layarea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/comadmin.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/CarPortController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/ClientMessageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/GmdLouController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/RoomController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/CarPort.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/CarportType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/ClientMessage.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Educations.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/carPortMapper/CarPortMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/carPortTypeMapper/CarPortTypeMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/clientMessagesMapper/ClientMessagesMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/educationMapper/EducationMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/gmdlouMapper/GmdLouMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/loucengMapper/LouCengMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/roomMapper/RoomMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/CarPortService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/CarPortTypeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/ClientMessageService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/EducationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/GmdLouService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/LouCengService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/RoomService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/CarPortServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/CarPortTypeServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/ClientMessageServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/EducationServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/GmdLouServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/LouCengServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/RoomServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/CarPortMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/ClientMessagesMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/GmdLouMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mapper/RoomMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/admin/js/layarea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/upload/19794b33-a8f9-4f24-8479-59b75aadb817.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/comadmin-0.0.1-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/comadmin-0.0.1-SNAPSHOT.jar.original" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_1_3_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_0_18.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_errorprone_error_prone_annotations_2_0_18.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_23_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_j2objc_j2objc_annotations_1_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_puppycrawl_tools_checkstyle_8_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_puppycrawl_tools_checkstyle_8_3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_cli_commons_cli_1_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_0_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_0_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_25_Final.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_25_Final.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_1_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_1_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_saxon_Saxon_HE_9_8_0_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_saxon_Saxon_HE_9_8_0_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr4_runtime_4_7.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_5_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_mojo_animal_sniffer_annotations_1_14.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_crazycake_shiro_redis_3_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_crazycake_shiro_redis_3_1_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_0_3_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_0_3_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_0_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_0_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_0_8_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_0_8_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_0_7_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/common/shiro/MyShiroRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/common/shiro/MyShiroRealm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/common/util/Encodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/common/util/Encodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/PayItemsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/PayItemsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOG_PATH_IS_UNDEFINED/log_info.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_PATH_IS_UNDEFINED/log_info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Bill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/GmdLou.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/GmdLou.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Items.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/MeterType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/payItemsMapper/PayItemsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/payItemsMapper/PayItemsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/userMapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/mapper/userMapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/MenuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/PayItemsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/PayItemsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/RoleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/MenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/PayItemsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/PayItemsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PayItemsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PayItemsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/admin/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/admin/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/role/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/role/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/user/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/user/userInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Louceng.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Louceng.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Meter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Meter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItemsT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/PayItemsT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yunhan/entity/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addgbtncar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addgbtncar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addgbtnroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addgbtnroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addgcar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addgcar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addgclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addgclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addglou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addglou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addgroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addgroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gcar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gcar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gclientxq.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gclientxq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/glou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/glou.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gpay.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gpay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/common/shiro/MyShiroRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/common/shiro/MyShiroRealm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/common/util/Encodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/common/util/Encodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController$LoginTypeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController$LoginTypeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/PayItemsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/PayItemsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/groom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/groom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gupdatecar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gupdatecar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gupdateclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gupdateclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/gupdatelou.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/gupdatelou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/upgroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/upgroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/controller/RoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/controller/RoleController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/GmdLou.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/GmdLou.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Items.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Items.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/MeterType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/payItemsMapper/PayItemsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/payItemsMapper/PayItemsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/userMapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/mapper/userMapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/MenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/MenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/PayItemsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/PayItemsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/RoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/MenuServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/MenuServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/PayItemsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/PayItemsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PayItemsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PayItemsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/admin/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/admin/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/role/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/role/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user/add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin/user/userInfo.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin/user/userInfo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Louceng.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Louceng.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Meter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Meter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItemsT.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/PayItemsT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yunhan/entity/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/upload/02590c05-b710-45e3-8e00-87ee9a08c166.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/upload/05d0f671-5cb8-4487-a33d-5fef6b0284ae.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/upload/06331843-e63c-4a84-a2b8-1406a162f625.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/upload/28befce7-1579-43b4-af0c-511a044bf941.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/upload/5e29aa66-29be-4ba8-8e70-e41c43003115.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/upload/d50c90e7-73c0-4b32-92d5-f732566f2e0f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addgbtncar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addgbtncar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addgbtnroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addgbtnroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addgcar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addgcar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addgclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addgclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addglou.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addglou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addgroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addgroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/gcar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gcar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/gclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/gclientxq.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gclientxq.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/glou.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/glou.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/gpay.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gpay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/groom.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/groom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/gupdatecar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gupdatecar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/gupdateclient.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gupdateclient.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/gupdatelou.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/gupdatelou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/upgroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/upgroom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.yunhan.admin.AdminApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.yunhan.admin.AdminApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.yunhan.admin.AdminApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.yunhan.admin.AdminApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,8 +204,8 @@
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\bdqn\Y2\01-maven-code\localRepository" />
-        <option name="mavenHome" value="D:\工具\maven\apache-maven-3.6.0" />
-        <option name="userSettingsFile" value="D:\工具\maven\apache-maven-3.6.0\conf\settings.xml" />
+        <option name="mavenHome" value="C:/Program Files/Java/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="C:\Program Files\Java\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -140,9 +245,6 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
-  </component>
-  <component name="ReactorSettings">
-    <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -186,17 +288,6 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -259,7 +350,19 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="application-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -357,6 +460,8 @@
       <workItem from="1606264202763" duration="7660000" />
       <workItem from="1606349938252" duration="5635000" />
       <workItem from="1606369727518" duration="7811000" />
+      <workItem from="1606528043844" duration="553000" />
+      <workItem from="1606542392657" duration="3670000" />
     </task>
     <task id="LOCAL-00001" summary="加入天赐项目">
       <created>1573105378911</created>
@@ -397,19 +502,20 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="加入天赐项目" />
@@ -447,46 +553,59 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1605596270520" />
+    <state x="267" y="8" key="CommitChangelistDialog2" timestamp="1606546553668">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="267" y="8" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1606546553668" />
     <state width="451" height="438" key="DebuggerActiveHint" timestamp="1605928527457">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="451" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1605928527457" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1605666018417">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="869" y="117" key="FileChooserDialogImpl" timestamp="1606528135817">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1605666018417" />
-    <state width="1323" height="166" key="GridCell.Tab.0.bottom" timestamp="1606363216583">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="869" y="117" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606528135817" />
+    <state width="1493" height="149" key="GridCell.Tab.0.bottom" timestamp="1606546073743">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
-    <state width="1323" height="166" key="GridCell.Tab.0.center" timestamp="1606363216583">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="149" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606546073743" />
+    <state width="1493" height="149" key="GridCell.Tab.0.center" timestamp="1606546073743">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
-    <state width="1323" height="166" key="GridCell.Tab.0.left" timestamp="1606363216582">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="149" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606546073743" />
+    <state width="1493" height="149" key="GridCell.Tab.0.left" timestamp="1606546073743">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606363216582" />
-    <state width="1323" height="166" key="GridCell.Tab.0.right" timestamp="1606363216583">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="149" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606546073743" />
+    <state width="1493" height="149" key="GridCell.Tab.0.right" timestamp="1606546073743">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
-    <state width="1323" height="166" key="GridCell.Tab.1.bottom" timestamp="1606363216583">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="149" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606546073743" />
+    <state width="1493" height="149" key="GridCell.Tab.1.bottom" timestamp="1606546073744">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
-    <state width="1323" height="166" key="GridCell.Tab.1.center" timestamp="1606363216583">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="149" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606546073744" />
+    <state width="1493" height="149" key="GridCell.Tab.1.center" timestamp="1606546073744">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
-    <state width="1323" height="166" key="GridCell.Tab.1.left" timestamp="1606363216583">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="149" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606546073744" />
+    <state width="1493" height="149" key="GridCell.Tab.1.left" timestamp="1606546073743">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
-    <state width="1323" height="166" key="GridCell.Tab.1.right" timestamp="1606363216583">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1493" height="149" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606546073743" />
+    <state width="1493" height="149" key="GridCell.Tab.1.right" timestamp="1606546073744">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1323" height="166" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1606363216583" />
+    <state width="1493" height="149" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606546073744" />
     <state width="1323" height="214" key="GridCell.Tab.2.bottom" timestamp="1606276623770">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -507,10 +626,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="213" y="19" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1605150373767" />
-    <state x="184" y="8" key="SettingsEditor" timestamp="1605748610523">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="207" y="9" key="SettingsEditor" timestamp="1606544526953">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="184" y="8" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1605748610523" />
+    <state x="207" y="9" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606544526953" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1605666642142">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -519,10 +639,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="482" y="141" key="chooseDestDirectoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1605317030368" />
-    <state x="486" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606386426374">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="546" y="314" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606546310104">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="486" y="277" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1606386426374" />
+    <state x="546" y="314" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1606546310104" />
     <state x="385" y="0" width="596" height="728" key="find.popup" timestamp="1605323095840">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.gmdlouMapper.GmdLouMapper">
+    <!--执行修改-->
+    <update id="upLou" parameterType="GmdLou">
+        update building
+        <set>
+            <if test="buildingName != null">
+                buildingName=#{buildingName},
+            </if>
+            <if test="loucengCount != null">
+                loucengCount=#{loucengCount},
+            </if>
+            <if test="buildingStatus != null">
+                buildingStatus=#{buildingStatus},
+            </if>
+            <if test="updateId != null">
+                update_by = #{updateId},
+            </if>
+            update_date = now()
+        </set>
+        where id=#{id}
+    </update>
+
+</mapper>

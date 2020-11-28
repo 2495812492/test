@@ -7,7 +7,7 @@ public class Bill {
     private  String payproject;
     private int  practical;
     private int price;
-    private int assessment;//4651656
+    private int assessment;
     private String remark;
     private String homeNO;
     private String meterReadTime;

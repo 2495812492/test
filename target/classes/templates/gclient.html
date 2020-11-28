@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
-    <script src="https://www.layuicdn.com/layui/layui.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" th:href="@{/static/layui/css/layui.css}" media="all" />
+    <script type="text/javascript" th:src="@{/static/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/jquery-2.1.3.min.js}"></script>
 </head>
 <body>
 <div class="demoTable">
@@ -23,7 +23,7 @@
 
 <script type="text/html" id="barDemo">
     <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-    <!--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
     <a class="layui-btn layui-btn-xs" lay-event="xiangqing">详情</a>
 </script>
 
@@ -48,7 +48,7 @@
                 , cols: [
                     [ //表头
                         {type: 'checkbox', fixed: 'left'}
-                        , {field: 'clientMessageId', title: '客户编号', width: 80, sort: true}
+                        , {field: 'id', title: '客户编号', width: 80, sort: true}
                         , {field: 'clientname', title: '姓名', width: 150}
                         , {field: 'phone', title: '电话', width: 150, sort: true}
                         , {field: 'clientType', title: '客户类型', width: 150}
@@ -58,14 +58,22 @@
                         // , {field: 'birthday', title: '出生日期', width: 150, sort: true}
                         , {field: 'nation', title: '民族', width: 150,}
                         , {field: 'natives', title: '家庭住址', width: 150, }
-                        , {field: 'education', title: '教育程度', width: 150}
-                        , {field: 'company', title: '工作单位', width: 150}
+                        , {field: 'educationID', title: '教育程度', width: 150,
+                        templet: function(d){
+                            if (d.educations != null && d.educations.education != null) {
+                                return '<span>' + d.educations.education + "</span>";
+                            } else {
+                                return '<span>无数据</span>';
+                            }
+                        }
+                    }
+                       /* , {field: 'company', title: '工作单位', width: 150}
                         , {field: 'relationname', title: '紧急联系人', width: 150}
                         , {field: 'emergencyPhone', title: '紧急电话', width: 150, sort: true}
-                        , {field: 'address', title: '联系地址', width: 150,}
-                        , {field: 'openBank', title: '开户行', width: 150,}
-                        , {field: 'banknumber', title: '银行账号', width: 150}
-                        , {field: 'addTime', title: '添加日期', width: 150, sort: true}
+                        , {field: 'address', title: '联系地址', width: 150,}*/
+                        //, {field: 'openBank', title: '开户行', width: 150,}
+                        , {field: 'bankCardNum', title: '银行账号', width: 150}
+                        , {field: 'createDate', title: '添加日期', width: 150, sort: true}
                         , {fixed: 'right', width: 165, align: 'center', toolbar: '#barDemo'}
                     ]
                 ]
@@ -84,7 +92,7 @@
                     shadeClose:true,          //点击遮罩层外区域关闭遮罩层
                     area: ['580px', '500px'],    //弹出框大小
                     anim: 1,              //弹出动画
-                    content:'selUpClient?clientmessageid='+data.clientMessageId
+                    content:'selUpClient?id='+data.id
                 });
             }
             //客户详情信息
@@ -96,17 +104,17 @@
                     shadeClose:true,          //点击遮罩层外区域关闭遮罩层
                     area: ['580px', '500px'],    //弹出框大小
                     anim: 1,              //弹出动画
-                    content:'selxqClient?clientmessageid='+data.clientMessageId
+                    content:'selxqClient?id='+data.id
                 });
             }
             //删除
             if(layEvent === 'del'){
                 //操作
                 layer.confirm('真的要删除吗？', function () {
-                    $.post("delClient",{'clientmessageid':data.clientMessageId},function(result)
+                    $.post("delClient",{'id':data.id},function(result)
                         {
                             layer.msg(
-                                result.msg, {
+                                result.message, {
                                     icon: 1,
                                     time: 1000 //2秒关闭（如果不配置，默认是3秒）
                                 }, function(){

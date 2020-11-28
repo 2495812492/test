@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.clientMessagesMapper.ClientMessagesMapper">
+
+    <resultMap id="clientMap" type="ClientMessage">
+        <id property="id" column="id"/>
+        <result property="clientname" column="clientname"/>
+        <result property="phone" column="phone"/>
+        <result property="clientType" column="clientType"/>
+        <result property="certificateType" column="certificateType"/>
+        <result property="certificateNo" column="certificateNo"/>
+        <result property="gender" column="gender"/>
+        <result property="bankCardNum" column="bankCardNum"/>
+        <result property="createDate" column="create_date"/>
+        <result property="nation" column="nation"/>
+        <result property="natives" column="natives"/>
+
+        <association property="educations" javaType="Educations">
+            <result property="id" column="e.id"/>
+            <result property="education" column="education"/>
+        </association>
+    </resultMap>
+
+   <!-- 通过map集合中的参数查询客户列表信息-->
+    <select id="getClientListPage" parameterType="Map" resultMap="clientMap">
+        SELECT c.id,c.clientname,c.phone,c.clientType,c.`certificateType`,c.`certificateNo`,c.`gender`,c.`bankCardNum`,c.`create_date`,c.`nation`,c.`natives`, e.id AS "e.id",e.education
+        FROM `clientmessage` c
+        LEFT JOIN `educations` e ON e.id = c.`educationID`
+        where c.clientStatus = 0 and c.del_flag = 0
+        <if test="clientname!=null and clientname!=''">
+            and c.clientname like concat('%',#{clientname},'%')
+        </if>
+        LIMIT #{first},#{pageSize}
+    </select>
+
+    <!--分页查询客户总记录数-->
+    <select id="getCountClientListPage" resultType="Long" parameterType="ClientMessage">
+        SELECT count(1)
+        FROM `clientmessage` c
+        LEFT JOIN `educations` e ON e.id = c.`educationID`
+        where c.clientStatus = 0 and c.del_flag != 1
+        <if test="clientname!=null and clientname!=''">
+            and c.clientname like concat('%',#{clientname},'%')
+        </if>
+    </select>
+
+   <!-- 通过客户ID查询查询客户详情信息-->
+    <select id="getClientById" parameterType="java.lang.String" resultMap="clientMap">
+        SELECT c.`id`,c.`clientname`,c.`phone`,c.`clientType`,c.`certificateType`,c.`certificateNo`,
+            c.gender,c.`bankCardNum`,c.`create_date`,c.`nation`,c.`natives`,e.id AS "e.id",e.`education`
+            FROM clientMessage c
+            LEFT JOIN educations e ON c.educationID=e.id
+            where c.clientStatus = 0
+        <if test="_parameter !=null and _parameter !=''">
+            AND c.id = #{id}
+        </if>
+    </select>
+</mapper>

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
-    <script src="https://www.layuicdn.com/layui/layui.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" th:href="@{/static/layui/css/layui.css}"/>
+    <script type="text/javascript" th:src="@{/static/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/jquery-2.1.3.min.js}"></script>
+
     <link type="text/css" rel="stylesheet" th:href="@{/css/layui.css}"/>
     <link type="text/css" rel="stylesheet" th:href="@{/css/layer.css}"/>
 
@@ -16,19 +17,27 @@
     <div class="layui-form-item">
         <label class="layui-form-label">车位号</label>
         <div class="layui-input-block">
-            <input type="text" name="carportno" id="name" lay-verify="title" autocomplete="off"  class="layui-input">
+            <input type="text" name="carportNo" id="name" lay-verify="carportNo" autocomplete="off"  class="layui-input">
         </div>
     </div>
 
     <div class="layui-form-item">
         <label class="layui-form-label">车位类型</label>
         <div class="layui-input-block">
-            <select th:name="carporttid" lay-filter="aihao">
-                <option th:each="c:${gc}" th:value="${c.carporttid}" th:text="${c.carporttname}"></option>
+            <select th:name="carportTid" lay-filter="aihao">
+                <option th:each="c:${gc}" th:value="${c.id}" th:text="${c.carportTname}"></option>
 
             </select>
         </div>
     </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">车位状态</label>
+        <div class="layui-input-block">
+            <input type="radio" name="cartportStatus" value="0" title="未使用" checked >
+            <input type="radio" name="cartportStatus" value="1" title="已使用" >
+        </div>
+    </div>
+
     <div style="margin-left: 210px">
         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="tijiao">提交</button>
@@ -50,39 +59,37 @@
             trigger:'click'
         });
 
-        //监听提交
+        //对form表单做非空验证。
+        form.verify({
+            carportNo: function(value){
+                if(value.length == 0){
+                    return '车位号不能为空';
+                }
+            }
+        });
+
+        //监听提交， [提交]按扭的点击事件，实现表单的提交
         form.on('submit(tijiao)', function(data){
+            data.field.cartportStatus = $("[name='cartportStatus']:checked").val();  //获取单选按扭选中的值(车位状态)
             //data.field表单所有信息
-            if($("#name").val()==""){
-                alert("车位号不能为空！") ;
-                return false;
-            }
-            //data.field表单所有信息
-            else {
-                $.post("addCar", data.field, function (result) {
-                    if(result.data==false){
-                        layer.msg(result.msg, {
+            $.post("addCar", data.field, function (result) { //新增请求的地址为： addCar
+                if(!result.success){
+                    layer.msg(result.message, {
+                        icon: 1,
+                        time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                    })
+                } else {
+                    layer.msg(result.message, {
                             icon: 1,
-                            time: 1000 //2秒关闭（如果不配置，默认是3秒）
-                        })
-
-                    }
-                    else {
-                        layer.msg(result.msg, {
-                                icon: 1,
-                                time: 1000 //2秒关闭（如果不配置，默认是3秒）
-                            },
-
-                            function () {
-                                //刷新父页面
-                                parent.window.location.reload();
-                            });
-                    }
-                    }
-                );
-            }
-                return false;
-
+                            time: 1000 //1秒关闭（如果不配置，默认是3秒）
+                        },
+                        function () {
+                            //刷新父页面
+                            parent.window.location.reload();
+                        });
+                }
+            });
+            return false;
         });
         //重置清空文本框
         $("#reset").click(function () {

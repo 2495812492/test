@@ -3,54 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
+    <!--<link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
     <script src="https://www.layuicdn.com/layui/layui.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <link type="text/css" rel="stylesheet" th:href="@{/css/layui.css}"/>
-    <link type="text/css" rel="stylesheet" th:href="@{/css/layer.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/layer.css}"/>-->
+    <link rel="stylesheet" th:href="@{/static/layui/css/layui.css}"/>
+    <script type="text/javascript" th:src="@{/static/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/jquery-2.1.3.min.js}"></script>
+    <!--引入地区选择的三级联动所需要的JS文件-->
+    <!--<script type="text/javascript" th:src="@{/static/admin/js/layarea.js}"></script>-->
+    <link type="text/css" rel="stylesheet" th:href="@{/static/css/layer.css}"/>
 </head>
 <body>
 <form class="layui-form">
-    <div class="layui-tab"><!--最大层-->
-        <ul class="layui-tab-title"><!--内层-->
+    <!--<div class="layui-tab">&lt;!&ndash;最大层&ndash;&gt;
+        <ul class="layui-tab-title">&lt;!&ndash;内层&ndash;&gt;
             <li class="layui-this">客户信息</li>
             <li>紧急联系人信息</li>
         </ul>
-        <div class="layui-tab-content">
+        <div class="layui-tab-content">-->
+
+
             <!--客户信息-->
             <div class="layui-tab-item layui-show">
-
-
-
                 <div class="layui-form-item">
                     <label class="layui-form-label">姓名</label>
                     <div class="layui-input-block">
-                        <input type="text" name="clientname"    class="layui-input" id="clientname">
+                        <input type="text" name="clientname"  lay-verify="clientname"  class="layui-input" id="clientname">
                     </div>
                 </div>
 
                 <div class="layui-inline">
                     <label class="layui-form-label">电话</label>
                     <div class="layui-input-inline">
-                        <input type="tel" name="phone" lay-verify="required|phone" autocomplete="off" class="layui-input" id="phone">
+                        <input type="tel" name="phone" lay-verify="phone" autocomplete="off" class="layui-input" id="phone">
+                    </div>
+                </div>
+
+                <!--使用layui的扩展模块layarea.js实现地区选择的三级联动-->
+                <div class="layui-form-item" id="area-picker">
+                    <div class="layui-form-label">家庭住址</div>
+                    <div class="layui-input-inline" style="width: 200px;">
+                        <select name="province" class="province-selector" data-value="湖南省" lay-filter="province-1">
+                            <option value="">请选择省</option>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline" style="width: 200px;">
+                        <select name="city" class="city-selector" data-value="长沙市" lay-filter="city-1">
+                            <option value="">请选择市</option>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline" style="width: 200px;">
+                        <select name="county" class="county-selector" data-value="雨花区" lay-filter="county-1">
+                            <option value="">请选择区</option>
+                        </select>
+                    </div>
+                </div>
+                <!--上面只是省市区三级联动，具体精确到小区/街道之类的还需要在下面的textarea中填写-->
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">详细住址</label>
+                    <div class="layui-input-block">
+                        <textarea  name="addDetail" placeholder="详细地址" class="layui-textarea" id="addDetail"></textarea>
                     </div>
                 </div>
 
 
+                <!--<div class="layui-form-item">
+                    <label class="layui-form-label">客户类型</label>
+                    <div class="layui-input-block">
+                        <select name="clientType" lay-filter="clientType">
+                            <opion value=""></opion>
+                            <option value="业主">业主</option>
+                            &lt;!&ndash;<option value="租户" selected="">租户</option>&ndash;&gt;
+                        </select>
+                    </div>
+                </div>-->
+
                 <div class="layui-form-item">
                     <label class="layui-form-label">客户类型</label>
                     <div class="layui-input-block">
-                        <select name="clienttype" lay-filter="aihao">
-                            <opion value=""></opion>
-                            <option value="业主">业主</option>
-                            <!--<option value="租户" selected="">租户</option>-->
-
+                        <select name="clientType" lay-filter="clientType">
+                            <option value="业主" selected>业主</option>
+                            <option value="租户" selected="">租户</option>
                         </select>
                     </div>
                 </div>
 
 
-                <div class="layui-form-item">
+
+                <!--<div class="layui-form-item">
                     <label class="layui-form-label">证件类型</label>
                     <div class="layui-input-block">
                         <select th:name="certificatetype" lay-filter="aihao">
@@ -58,12 +100,28 @@
 
                         </select>
                     </div>
+                </div>-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">证件类型</label>
+                    <div class="layui-input-block">
+                        <select th:name="certificateType" lay-filter="certificateType">
+                            <option value="身份证" selected="">身份证</option>
+                            <option value="居住证">居住证</option>
+                            <option value="签证">签证</option>
+                            <option value="护照">护照</option>
+                            <option value="户口本">户口本</option>
+                            <option value="军人证">军人证</option>
+                            <option value="党员证">党员证</option>
+                            <option value="港澳通行证">港澳通行证</option>
+                        </select>
+                    </div>
                 </div>
+
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">证件号</label>
                     <div class="layui-input-block">
-                        <input type="text" name="certificateno" lay-verify="identity" placeholder="" autocomplete="off" class="layui-input" id="certificateno">
+                        <input type="text" name="certificateNo" lay-verify="certificateNo" placeholder="" autocomplete="off" class="layui-input" id="certificateno">
                     </div>
                 </div>
 
@@ -78,7 +136,7 @@
 
 
 
-                <div class="layui-form-item">
+                <!--<div class="layui-form-item">
                     <label class="layui-form-label">民族</label>
                     <div class="layui-input-block">
                         <select th:name="nation" lay-filter="aihao">
@@ -87,27 +145,33 @@
 
                         </select>
                     </div>
+                </div>-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">民族</label>
+                    <div class="layui-input-block">
+                        <select th:name="nation" lay-filter="nation" id="nation">
+                        </select>
+                    </div>
                 </div>
 
-                <div class="layui-form-item layui-form-text">
+                <!--<div class="layui-form-item layui-form-text">
                 <label class="layui-form-label">家庭住址</label>
                 <div class="layui-input-block">
                     <textarea  name="natives" placeholder="请输入内容" class="layui-textarea" id="natives"></textarea>
                 </div>
-            </div>
+            </div>-->
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">教育程度</label>
                     <div class="layui-input-block">
-                        <select th:name="educationid" lay-filter="aihao">
-                            <option th:each="e:${ed}" th:value="${e.educationid}" th:text="${e.education}"></option>
-
+                        <select th:name="educationID" lay-filter="aihao">
+                            <option th:each="e:${ed}" th:value="${e.id}" th:text="${e.education}"></option>
                         </select>
                     </div>
                 </div>
 
 
-                <div class="layui-form-item">
+               <!-- <div class="layui-form-item">
                     <label class="layui-form-label">开户行</label>
                     <div class="layui-input-block">
                         <select name="openbank" lay-filter="aihao">
@@ -119,32 +183,32 @@
 
                         </select>
                     </div>
-                </div>
+                </div>-->
 
 
                 <div class="layui-inline">
                     <label class="layui-form-label">卡号</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="banknumber"  class="layui-input" id="banknumber" lay-verify="required|number">
+                        <input type="text" name="bankCardNum"  class="layui-input" id="banknumber" lay-verify="bankCardNum">
                     </div>
                 </div>
 
 
-                <div class="layui-inline">
+               <!-- <div class="layui-inline">
                     <label class="layui-form-label">添加日期</label>
                     <div class="layui-input-inline">
                         <input type="text" name="addtime" id="date1" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
                     </div>
-                </div>
+                </div>-->
 
 
 
-            </div><!--客户信息闭合-->
+           <!-- </div>--><!--客户信息闭合-->
 
 
 
 
-            <!--紧急联系人-->
+            <!--紧急联系人
             <div class="layui-tab-item">
 
 
@@ -180,22 +244,33 @@
 
 
 
-            </div><!--紧急联系人闭合-->
+            </div>紧急联系人闭合-->
 
         </div><!--内层-->
         <div style="margin-left: 210px">
             <button type="reset" class="layui-btn layui-btn-primary">重置</button>
             <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="tijiao">提交</button>
         </div>
-    </div><!--最大层-->
+    <!--</div>--><!--最大层-->
 
 </form>
 
 <script type="text/javascript">
 
+    $(function(){
+        //56个民族下拉框绑定
+        var nations = ["汉族","蒙古族","回族","藏族","维吾尔族","苗族","彝族","壮族","布依族","朝鲜族","满族","侗族","瑶族","白族","土家族",
+            "哈尼族","哈萨克族","傣族","黎族","傈僳族","佤族","畲族","高山族","拉祜族","水族","东乡族","纳西族","景颇族","柯尔克孜族",
+            "土族","达斡尔族","仫佬族","羌族","布朗族","撒拉族","毛南族","仡佬族","锡伯族","阿昌族","普米族","塔吉克族","怒族", "乌孜别克族",
+            "俄罗斯族","鄂温克族","德昂族","保安族","裕固族","京族","塔塔尔族","独龙族","鄂伦春族","赫哲族","门巴族","珞巴族","基诺族"];
+        var nation = $("#nation");
+        for ( var i=0;i<nations.length;i++) {
+            var a=nations[i];
+            nation.append("<option value='" + a + "'>" + a + "</option>");
+        }
+    });
 
-
-    layui.use(['form', 'layer', 'laydate','element'], function(){
+    /*layui.use(['form', 'layer', 'laydate','element'], function(){
         var form = layui.form
             ,layer = layui.layer
             ,laydate = layui.laydate
@@ -211,7 +286,26 @@
                 alert("格式错误，应该是19位数字！");
             }
 
-        })
+        })*/
+    layui.config({
+        base : "static/admin/js/" //设定扩展的 layarea.js 模块的所在目录，一般用于外部模块扩展(事先添加layarea.js文件)
+    }).use(['form', 'layer', 'laydate','element','layarea'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,laydate = layui.laydate
+            ,element = layui.element
+            ,layarea = layui.layarea
+            ,$=layui.jquery;
+        var address;  //用于保存当前客户的家庭地址
+        //调用layarea.render方法实现三级联动下拉框的渲染
+        layarea.render({
+            elem: '#area-picker',  //将三级联动渲染到id='area-picker'所在的div中
+            change: function (res) {  //省市区三级联动选中后，使用res接收省市区信息, 使用逗号分隔赋值给address
+                address = res.province + "," + res.city + "," + res.county;
+                console.log(res); //res.province   res.city  res.county
+            }
+        });
+
 
 
 
@@ -224,7 +318,7 @@
             elem: '#date1',
             trigger:'click'
         });
-        //监听提交
+        /*//监听提交
         form.on('submit(tijiao)', function(data){
             //data.field表单所有信息
 
@@ -302,6 +396,74 @@
             $("#relationname").val("");
             form.render();
 
+        })
+    });*/
+
+        form.verify({
+            clientname: function(value){
+                if(value == 0){
+                    return '用户名不能为空';
+                }
+            }
+            ,phone: function(value){
+                if(value.length == 0){
+                    return '手机号码不能为空';
+                }
+            }
+            ,certificateNo : function(value) {
+                if(value.length == 0){
+                    return '证件号不能为空';
+                }
+            }
+            ,bankCardNum : function(value) {
+                if(value.length == 0){
+                    return '卡号不能为空';
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(tijiao)', function(data){
+            //data.field表单所有信息
+            if($("#banknumber").val()  == "" || $("#banknumber").val().length != 19) {
+                layer.msg("格式错误，应该是19位数字！", { time : 2000})
+                return false;
+            } else {
+                //封装家庭住址参数
+                data.field.natives = $("#addDetail").val() == "" ? address : address + "," + $("#addDetail").val();
+                $.post("addClient", data.field, function (result) {
+                        if (!result.success) {
+                            layer.msg(result.message, {
+                                icon: 1,
+                                time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                            })
+                        } else {
+                            layer.msg(result.message, {
+                                icon: 1,
+                                time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                            }, function () {
+                                //刷新父页面
+                                parent.window.location.reload();
+                            });
+                        }
+                    }
+                );
+                return false;
+            }
+        });
+
+        //重置清空文本框
+        $("#reset").click(function () {
+            $("#clientname").val("");
+            $("#phone").val("");
+            $("#certificateno").val("");
+            $("#natives").val("");
+            $("#banknumber").val("");
+            $("#date1").val("");
+            $("#company").val("");
+            $("#emergencyphone").val("");
+            $("#relationname").val("");
+            form.render();
         })
     });
 </script>

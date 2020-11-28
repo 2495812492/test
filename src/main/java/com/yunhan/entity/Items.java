@@ -6,8 +6,9 @@ import com.yunhan.common.base.DataEntity;
 
 @TableName("items")
 public class Items extends DataEntity<Items> {
-    @TableField(value = "itemsname")
-    private String itemsname;
+
+    @TableField("itemsname")
+    private String itemsname;   //方案类型名
 
     public String getItemsname() {
         return itemsname;

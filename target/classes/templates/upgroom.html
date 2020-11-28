@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
-    <script src="https://www.layuicdn.com/layui/layui.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" th:href="@{/static/layui/css/layui.css}" media="all" />
+    <script type="text/javascript" th:src="@{/static/layui/layui.js}"></script>
+    <script type="text/javascript" th:src="@{/static/js/jquery-2.1.3.min.js}"></script>
 
 </head>
 <body>
-<form class="layui-form" th:each="r:${gr}">
-    <input type="hidden" th:name="roomid" th:value="${r.roomid}">
-    <input type="hidden" th:name="loucengno" th:value="${r.loucengno}">
+<form class="layui-form">
+    <input type="hidden" th:name="id" th:value="${r.id}">
+   <!-- <input type="hidden" th:name="loucengno" th:value="${r.loucengno}">-->
 
 
     <div class="layui-form-item">
         <label class="layui-form-label">房间号</label>
         <div class="layui-input-block">
-            <input type="text" name="roomno"  id="roomno"th:value="${r.roomno}"   class="layui-input" disabled="disabled">
+            <input type="text" name="roomNo"  id="roomno"th:value="${r.roomNo}" lay-verify="roomNo"  class="layui-input" disabled="disabled">
         </div>
     </div>
     <div class="layui-form-item">
         <label class="layui-form-label">建筑面积</label>
         <div class="layui-input-block">
-            <input type="text" name="roomarea" th:value="${r.roomarea}" id="roomarea"   class="layui-input" disabled="disabled">
+            <input type="text" name="roomArea" th:value="${r.roomArea}" id="roomarea" lay-verify="roomArea"   class="layui-input" disabled="disabled">
         </div>
     </div>
 
@@ -31,12 +31,12 @@
     <div class="layui-form-item">
         <label class="layui-form-label">户型</label>
         <div class="layui-input-block">
-            <select name="housetype" lay-filter="aihao" disabled="disabled">
-                <option value="一室一厅">一室一厅</option>
-                <option value="两室一厅" selected="">两室一厅</option>
-                <option value="三室一厅">三室一厅</option>
-                <option value="三室两厅">三室两厅</option>
-                <option value="四室一厅">四室一厅</option>
+            <select name="houseType" lay-filter="aihao">
+                <option th:selected="${r.houseType eq  '一室一厅'}" value="一室一厅">一室一厅</option>
+                <option th:selected="${r.houseType eq  '两室一厅'}" value="两室一厅">两室一厅</option>
+                <option th:selected="${r.houseType eq  '三室一厅'}" value="三室一厅">三室一厅</option>
+                <option th:selected="${r.houseType eq  '三室两厅'}" value="三室两厅">三室两厅</option>
+                <option th:selected="${r.houseType eq  '四室一厅'}" value="四室一厅">四室一厅</option>
             </select>
         </div>
     </div>
@@ -46,13 +46,20 @@
         <label class="layui-form-label">装修</label>
         <div class="layui-input-block">
             <select name="finish" lay-filter="aihao">
-                <option value="精装">精装</option>
-                <option value="简装">简装</option>
-                <option value="毛胚">毛胚</option>
+                <option th:selected="${r.finish eq '精装'}" value="精装">精装</option>
+                <option th:selected="${r.finish eq '简装'}" value="简装">简装</option>
+                <option th:selected="${r.finish eq '毛胚'}" value="毛胚">毛胚</option>
             </select>
         </div>
     </div>
 
+    <div class="layui-form-item">
+        <label class="layui-form-label">房间状态</label>
+        <div class="layui-input-block">
+            <input type="radio" name="houseState" value="0" title="未入住" th:checked="${r.houseState == 0} ? true : false">
+            <input type="radio" name="houseState" value="1" title="已入住" th:checked="${r.houseState == 1} ? true : false">
+        </div>
+    </div>
 
     <div style="margin-left: 210px">
         <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="tijiao">提交</button>
@@ -69,52 +76,45 @@
 
 
 
-        //监听提交
-
-        form.on('submit(tijiao)', function(data){
-            if($("#roomno").val()==""){
-                alert("房间号不能为空！") ;
-                return false;
-            }
-            if($("#roomarea").val()=="") {
-                alert("房间面积不能为空！");
-                return false;
-            }
-
-            else
-                {
-                    $.post("upRoom", data.field, function (result) {
-                            if (result.data == false) {
-                                layer.msg(result.msg, {
-                                    icon: 1,
-                                    time: 1000 //2秒关闭（如果不配置，默认是3秒）
-                                })
-
-                            }
-                            else {
-                                layer.msg(result.msg, {
-                                        icon: 1,
-                                        time: 1000 //2秒关闭（如果不配置，默认是3秒）
-                                    },
-
-                                    function () {
-                                        //刷新父页面
-                                        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-                                        parent.layer.close(index)
-                                    });
-                            }
-                        }
-                    );
+        form.verify({
+            roomNo: function(value){
+                if(value.length == 0){
+                    return '房间号不能为空';
                 }
+            } ,roomArea: function(value){
+                if(value.length == 0){
+                    return '建筑面积不能为空';
+                }
+            }
+        });
+
+        //监听提交
+        form.on('submit(tijiao)', function(data){
+        //如果"房间状态"所在复选框被选中，即选择了已入住，就把房间状态houseState的值改成1
+            data.field.houseState = $("[name='houseState']:checked").val();  //获取单选按扭选中的值
+            //发送POST方式的ajax请求，请求地址为：upRoomo
+            $.post("upRoom", data.field, function (result) {
+                if (!result.success) {
+                    layer.msg(result.message, {
+                        icon: 1,
+                        time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                    })
+                } else {
+                    layer.msg(result.message, {
+                            icon: 1,
+                            time: 2000 //2秒关闭（如果不配置，默认是3秒）
+                        },
+
+                        function () {
+                            //刷新父页面
+                            parent.location.reload();
+                        });
+                }
+            });
             //阻止form表单提交
             return false;
         });
-        //重置清空文本框
-        $("#reset").click(function () {
-            $("#roomarea").val("");
-            form.render();
 
-        })
         //重置清空文本框
         $("#reset").click(function () {
             $("#roomno").val("");

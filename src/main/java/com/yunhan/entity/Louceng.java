@@ -1,31 +1,43 @@
 package com.yunhan.entity;
 
-public class Louceng {
-    private  Integer loucengID;
-    private Integer buildingID;
-    private String loucengNo;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.yunhan.common.base.DataEntity;
 
-    public Integer getLoucengID() {
-        return loucengID;
+//楼层实体类
+@TableName("louceng")
+public class Louceng extends DataEntity<Louceng> {
+
+    @TableField(value = "loucengNO")
+    private String loucengNO;//楼层编号
+
+    @TableField(value = "buildingID")
+    private String buildingID;//楼号编号        外键列引用于building楼号信息表的主键ID
+
+    @TableField(exist = false)
+    private GmdLou gmdLou;//楼号对象
+
+    public String getLoucengNO() {
+        return loucengNO;
     }
 
-    public void setLoucengID() {
-        this.loucengID = loucengID;
+    public void setLoucengNO(String loucengNO) {
+        this.loucengNO = loucengNO;
     }
 
-    public Integer getBuildingID() {
+    public String getBuildingID() {
         return buildingID;
     }
 
-    public void setBuildingID(Integer buildingID) {
+    public void setBuildingID(String buildingID) {
         this.buildingID = buildingID;
     }
 
-    public String getLoucengNo() {
-        return loucengNo;
+    public GmdLou getGmdLou() {
+        return gmdLou;
     }
 
-    public void setLoucengNo(String loucengNo) {
-        this.loucengNo = loucengNo;
+    public void setGmdLou(GmdLou gmdLou) {
+        this.gmdLou = gmdLou;
     }
 }

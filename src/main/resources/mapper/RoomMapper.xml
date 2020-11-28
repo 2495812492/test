@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.roomMapper.RoomMapper">
+
+    <!--使用resultMap进行自定义的结果集映射,即将查询出来的列映射到指定的实体类的属性中-->
+    <resultMap id="roomMap" type="Room">
+        <id property = "id" column="r.id"></id>
+        <result property="roomNo" column="roomNo"/>
+        <result property="roomArea" column="roomArea"/>
+        <result property="houseType" column="houseType"/>
+        <result property="houseState" column="houseState"/>
+        <result property="finish" column="finish"/>
+        <result property="createDate" column="create_date" />
+
+
+        <!--将跟客户信息相关的列映射到Room实体类中的相关属性上
+            private ClientMessage client;//客户对象/业主对象
+        -->
+        <association property="client" javaType="ClientMessage">
+            <result property="clientname" column="clientname"/>
+            <result property="phone" column="phone"/>
+            <result property="certificateType" column="certificateType"/>
+            <result property="certificateNo" column="certificateNo"/>
+        </association>
+
+        <!--完成将车位相关的映射映射到车位对象中的相关属性里 -->
+        <association property="client.carPort" javaType="CarPort">
+            <result property="id" column="cp.id"/>
+            <result property="carportNo" column="carportNo"/>
+        </association>
+
+        <!--private Louceng louCeng;//楼层对象-->
+        <association property="louCeng" javaType="Louceng">
+            <result property="loucengNO" column="loucengNO"/>
+        </association>
+
+        <!--private GmdLou gmdLou;//楼号对象-->
+        <association property="louCeng.gmdLou" javaType="GmdLou">
+            <result property="buildingName" column="buildingName"/>
+        </association>
+
+
+    </resultMap>
+
+
+    <!--通过条件查询房间列表信息-->
+    <select id="getRoomListPage" parameterType="java.util.Map" resultMap="roomMap">
+        SELECT
+            r.`id` AS "r.id",
+            r.`roomNo`,
+            r.`roomArea`,
+            r.`houseType`,
+            r.`houseState`,
+            r.finish,
+            r.`create_date`,
+            cm.`clientname`,
+            cm.`phone`,
+            cm.`certificateType`,
+            cm.`certificateNo`,
+            cp.`id` AS "cp.id",
+            cp.`carportNo`,
+            lc.`loucengNO`,
+            b.`buildingName`
+            FROM room r
+            LEFT JOIN `clientmessage` cm ON cm.`id` = r.`clientMessageId`
+            LEFT JOIN `carport` cp ON cp.`id`=cm.`carportID`
+            LEFT JOIN `louceng` lc ON r.`loucengID` = lc.`id`
+            LEFT JOIN `building` b ON b.`id` = lc.`buildingID`
+            <where>
+                <if test="clientname != null">
+                    cm.`clientname` like CONCAT('%',#{clientname},'%')
+                </if>
+            </where>
+        LIMIT #{first},#{pageSize}
+    </select>
+
+    <!--分页查询房间总记录数-->
+    <select id="getCountRoomListPage" parameterType="Room" resultType="java.lang.Long">
+        SELECT  count(1)
+        FROM room r
+        LEFT JOIN `clientmessage` cm ON cm.`id` = r.`clientMessageId`
+        LEFT JOIN `carport` cp ON cp.`id`=cm.`carportID`
+        LEFT JOIN `louceng` lc ON r.`loucengID` = lc.`id`
+        LEFT JOIN `building` b ON b.`id` = lc.`buildingID`
+        <where>
+            <if test="client != null and client.clientname != null">
+                cm.`clientname` like CONCAT('%',#{client.clientname},'%')
+            </if>
+        </where>
+
+    </select>
+
+
+    <!--添加房间时查询同一单元同一楼层是否存在-->
+    <select id="getRoomCountByMap" resultType="int">
+        SELECT COUNT(1) FROM room r
+        LEFT JOIN louceng lou ON r.`loucengID` = lou.id
+        LEFT JOIN building b ON b.`id` = lou.buildingID
+        <where>
+            <if test="roomNo != null">
+                AND r.roomNo = #{roomNo}
+            </if>
+            <if test="louCengId != null">
+                AND lou.id = #{louCengId}
+            </if>
+            <if test="buildingId != null">
+                AND b.id = #{buildingId}
+            </if>
+
+        </where>
+
+    </select>
+
+    <!--通过房间ID关联查询room房间表、louceng楼层表、clientMessage客户信息表相关的房间信息-->
+    <resultMap id="roomMapById" type="Room">
+        <id property="id" column="id"/>
+        <result property="roomNo" column="roomNo"/>
+        <result property="roomArea" column="roomArea"/>
+        <result property="houseType" column="houseType"/>
+        <result property="finish" column="finish"/>
+        <result property="houseState" column="houseState"/>
+        
+        <association property="client" javaType="ClientMessage">
+            <result property="clientname" column="cl.clientname"/>
+            <result property="phone" column="cl.phone"/>
+        </association>
+
+        <association property="louCeng" javaType="Louceng">
+            <result property="loucengNO" column="l.loucengNo"/>
+        </association>
+
+        <association property="louCeng.gmdLou" javaType="GmdLou">
+            <result property="id" column="b.id"/>
+            <result property="buildingName" column="b.buildingName" />
+        </association>
+    </resultMap>
+
+    <!--通过房间ID关联查询room房间表、louceng楼层表、clientMessage客户信息表相关的房间信息-->
+    <select id="getRoomListByRoomId" parameterType="string" resultMap="roomMapById">
+    SELECT r.id,r.roomNo,r.roomArea,r.houseType,r.finish,r.houseState, b.`id` AS    "b.id",b.`buildingName` AS "b.buildingName",cl.clientname AS "cl.clientname",cl.phone    AS "cl.phone",l.loucengNo AS "l.loucengNo"
+        FROM room r
+        LEFT JOIN `clientmessage` cl ON r.`clientMessageId` = cl.id
+        LEFT JOIN louceng l ON r.loucengID = l.id
+        LEFT JOIN building b ON l.`buildingID` = b.`id`
+            where r.id= #{id}
+    </select>
+
+    <!--修改-->
+    <update id="upRoom" parameterType="Room">
+        UPDATE
+          `yunhanmanager`.`room`
+          <set>
+              <if test="roomNo!=null">
+                  `roomNo` = #{roomNo},
+              </if>
+            <if test="roomArea!=null">
+                `roomArea` = #{roomArea},
+            </if>
+            <if test="houseType!=null">
+                `houseType` = #{houseType},
+            </if>
+            <if test="finish!=null">
+                `finish` = #{finish},
+            </if>
+            <if test="houseState!=null">
+                `houseState` = #{houseState},
+            </if>
+            <if test="client != null and client.id!=null">
+                clientMessageId = #{client.id},
+            </if>
+            <if test = "louCeng != null and louCeng.id != null">
+                id = #{louCeng.id},
+            </if>
+            <if test = "updateId != null">
+                update_by = #{updateId},
+            </if>
+              `update_date` = now()
+        </set>
+        WHERE `id` = #{id}
+    </update>
+
+    <!--删除-->
+    <delete id="delRoom">
+        delete from room where id = #{id}
+    </delete>
+
+</mapper>

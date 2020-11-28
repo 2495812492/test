@@ -1,14 +1,16 @@
 package com.yunhan.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldStrategy;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.yunhan.common.base.DataEntity;
-
-@TableName("payItemst")
-public class PayItemsT extends DataEntity<PayItemsT> {
-    @TableField(value = "patitemstName")
+public class PayItemsT {
+     private int payitemstId;
      private String patitemstName;
+
+    public int getPayitemstId() {
+        return payitemstId;
+    }
+
+    public void setPayitemstId(int payitemstId) {
+        this.payitemstId = payitemstId;
+    }
 
     public String getPatitemstName() {
         return patitemstName;

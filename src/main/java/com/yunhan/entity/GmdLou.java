@@ -1,16 +1,45 @@
 package com.yunhan.entity;
 
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.yunhan.common.base.DataEntity;
 
-public class GmdLou implements Serializable {
-    private  Integer buildingid;
-    private  String buildingname;
-    private Integer payitemsid;
-    private Integer loucengid;
-    private String loucengno;
-    private Integer buildingstatus;
-    private Integer loucengcount;
-    private Integer itemsid;
+//GmdLou实体类与building表建立映射关系
+@TableName("building")
+public class GmdLou extends DataEntity<GmdLou> {
+
+    //buildinaName属性与building表中的buildinaName建立映射关系
+    @TableField(value = "buildingName")
+    private String buildingName;
+
+    @TableField(value = "loucengCount")
+    private Integer loucengCount;//总楼层
+
+    @TableField(value = "itemsid")
+    private Integer itemsid;//方案类型ID
+
+    @TableField(value = "buildingStatus")
+    private Integer buildingStatus;//状态
+
+    //方案类型对象
+    @TableField(exist = false)
+    private Items items;//多对一的关联关系
+
+    public String getBuildingName() {
+        return buildingName;
+    }
+
+    public void setBuildingName(String buildingName) {
+        this.buildingName = buildingName;
+    }
+
+    public Integer getLoucengCount() {
+        return loucengCount;
+    }
+
+    public void setLoucengCount(Integer loucengCount) {
+        this.loucengCount = loucengCount;
+    }
 
     public Integer getItemsid() {
         return itemsid;
@@ -20,59 +49,19 @@ public class GmdLou implements Serializable {
         this.itemsid = itemsid;
     }
 
-    public Integer getLoucengcount() {
-        return loucengcount;
+    public Integer getBuildingStatus() {
+        return buildingStatus;
     }
 
-    public void setLoucengcount(Integer loucengcount) {
-        this.loucengcount = loucengcount;
+    public void setBuildingStatus(Integer buildingStatus) {
+        this.buildingStatus = buildingStatus;
     }
 
-    public Integer getBuildingstatus() {
-        return buildingstatus;
+    public Items getItems() {
+        return items;
     }
 
-    public void setBuildingstatus(Integer buildingstatus) {
-        this.buildingstatus = buildingstatus;
-    }
-
-    public Integer getBuildingid() {
-        return buildingid;
-    }
-
-    public void setBuildingid(Integer buildingid) {
-        this.buildingid = buildingid;
-    }
-
-    public String getBuildingname() {
-        return buildingname;
-    }
-
-    public void setBuildingname(String buildingname) {
-        this.buildingname = buildingname;
-    }
-
-    public Integer getPayitemsid() {
-        return payitemsid;
-    }
-
-    public void setPayitemsid(Integer payitemsid) {
-        this.payitemsid = payitemsid;
-    }
-
-    public Integer getLoucengid() {
-        return loucengid;
-    }
-
-    public void setLoucengid(Integer loucengid) {
-        this.loucengid = loucengid;
-    }
-
-    public String getLoucengno() {
-        return loucengno;
-    }
-
-    public void setLoucengno(String loucengno) {
-        this.loucengno = loucengno;
+    public void setItems(Items items) {
+        this.items = items;
     }
 }

@@ -1,24 +1,47 @@
 package com.yunhan.entity;
-public class Meter {
+
+import com.yunhan.common.base.DataEntity;
+
+public class Meter extends DataEntity<Meter> {
+
     private Integer meterID;
+
     private String precinct;
+
     private String homeNO;
+
     private String roomNO;
+
     private String meterNO;
+
     private String clientName;
+
     private int payitemsId;
+
     private String meterReadTime;
+
     private String meterReadEndTime;
+
     private int lastIndex;
+
     private int atIndex;
+
     private int additional;
+
     private int utility;
+
     private String meterReadType;
+
     private String meterReadStatus;
+
     private int auditStatus;
+
     private String meterReadDate;
+
     private String meterReader;
+
     private String remark;
+
     private int payitemstId;
 
     public String getRoomNO() {

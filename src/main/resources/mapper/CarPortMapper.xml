@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.carPortMapper.CarPortMapper">
+
+    <resultMap id="portMap" type="CarPort">
+        <result property="id" column="id"/>
+        <result property="carportNo" column="carportNo"/>
+        <result property="carportTid" column="carportTid"/>
+        <result property="cartportStatus" column="cartportStatus"/>
+        <result property="cbeginTime" column="cbeginTime"/>
+        <result property="cendTime" column="cendTime"/>
+
+        <!-- 使用assocation实现多对一映射 private CarPortType carPortType;  -->
+        <association property="carportType" javaType="CarportType">
+            <result property="carportTname" column="carportTname"/>
+        </association>
+
+        <!--使用assocation实现多对一映射： private ClientMessage client;  //车位是属于某个客户对象的。-->
+        <association property="client" javaType="ClientMessage">
+            <result property="clientname" column="clientname"/>
+            <result property="phone" column="phone"/>
+        </association>
+
+        <association property="room" javaType="Room">
+            <result property="roomNo" column="roomNo"/>
+        </association>
+    </resultMap>
+
+
+    <!--通过map集合中的参数查询车位列表信息-->
+    <select id="getCarPortListByMap" parameterType="java.util.Map" resultMap="portMap">
+        SELECT c.id,c.carportNo,c.carportTid,cl.`clientname`,cl.`phone`,tt.`carportTname`,
+        c.`cartportStatus`,c.`cbeginTime`,c.`cendTime`,r.`roomNo`
+        FROM carport c
+        LEFT JOIN clientMessage cl ON c.id=cl.carportID
+        LEFT JOIN `carportt` tt ON tt.`id` = c.`carportTid`
+        LEFT JOIN room r ON cl.id = r.`clientMessageId`
+        where c.del_flag = 0
+        <if test="clientname != null">
+            AND cl.clientname like CONCAT('%', #{clientname},'%')
+        </if>
+        LIMIT #{first},#{pageSize}
+    </select>
+
+
+    <!--分页查询车位总记录数-->
+    <select id="getCountCarPortListPage" parameterType="CarPort" resultType="long">
+        SELECT COUNT(1) FROM carport c
+        LEFT JOIN clientMessage cl ON c.id=cl.carportID
+        LEFT JOIN `carportt` tt ON tt.`id` = c.`carportTid`
+        LEFT JOIN room r ON cl.id = r.`clientMessageId`
+        where c.del_flag = 0
+        <if test="client != null and client.clientname != null">
+            AND cl.clientname like CONCAT('%', #{client.clientname},'%')
+        </if>
+    </select>
+
+    <select id="getCarPortById" parameterType="CarPort" resultMap="portMap">
+        SELECT c.id,c.carportNo,c.carportTid,cl.`clientname`,tt.`carportTname`,
+        c.`cbeginTime`,c.`cendTime`
+        FROM carport c
+        LEFT JOIN clientMessage cl ON c.id=cl.carportID
+        LEFT JOIN `carportt` tt ON tt.`id` = c.`carportTid`
+        where c.del_flag = 0
+        <if test="id != null">
+            AND c.id = #{id}
+        </if>
+    </select>
+
+</mapper>
