@@ -1,55 +1,56 @@
 package com.yunhan.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.yunhan.common.base.DataEntity;
 
 public class Meter extends DataEntity<Meter> {
-
+    @TableField("meterID")
     private Integer meterID;
-
+    @TableField("precinct")
     private String precinct;
-
+    @TableField("homeNO")
     private String homeNO;
-
-    private String roomNO;
-
+    @TableField("roomNo")
+    private String roomNo;
+    @TableField("meterNO")
     private String meterNO;
-
+    @TableField("clientName")
     private String clientName;
-
+    @TableField("payitemsId")
     private int payitemsId;
-
+    @TableField("meterReadTime")
     private String meterReadTime;
-
+    @TableField("meterReadEndTime")
     private String meterReadEndTime;
-
+    @TableField("lastIndex")
     private int lastIndex;
-
+    @TableField("atIndex")
     private int atIndex;
-
+    @TableField("additional")
     private int additional;
-
+    @TableField("utility")
     private int utility;
-
+    @TableField("meterReadType")
     private String meterReadType;
-
+    @TableField("meterReadStatus")
     private String meterReadStatus;
-
+    @TableField("auditStatus")
     private int auditStatus;
-
+    @TableField("meterReadDate")
     private String meterReadDate;
-
+    @TableField("meterReader")
     private String meterReader;
-
+    @TableField("remark")
     private String remark;
-
+    @TableField("payitemstId")
     private int payitemstId;
 
-    public String getRoomNO() {
-        return roomNO;
+    public String getRoomNo() {
+        return roomNo;
     }
 
-    public void setRoomNO(String roomNO) {
-        this.roomNO = roomNO;
+    public void setRoomNo(String roomNo) {
+        this.roomNo = roomNo;
     }
 
     public Integer getMeterID() {

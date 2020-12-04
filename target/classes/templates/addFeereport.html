@@ -2,53 +2,50 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>收费</title>
+    <title>Title</title>
     <link rel="stylesheet" href="https://www.layuicdn.com/layui/css/layui.css">
     <script src="https://www.layuicdn.com/layui/layui.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/layui.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/css/layer.css}"/>
 </head>
 <body>
-
-<form class="layui-form" th:each="am:${chargemsg}">
-
+<form class="layui-form">
     <div class="layui-form-item">
         <label class="layui-form-label">房间编号</label>
-        <div class="layui-input-block">
-            <input type="text" name="roomID" th:value="${am.roomNo}" lay-verify="title" autocomplete="off" disabled="disabled" class="layui-input">
-        </div>
+        <select name="roomID" lay-filter="aihao">
+            <option th:each="r:${rooms}" th:value="${r.id}" th:text="${r.roomNo}"></option>
+        </select>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">姓名</label>
-        <div class="layui-input-block">
-            <input type="text" name="clientname" th:value="${am.clientname}"  lay-verify="title" autocomplete="off" disabled="disabled" class="layui-input">
-        </div>
+        <label class="layui-form-label">客户姓名</label>
+        <select name="clientMessageId" lay-filter="aihao">
+            <option th:each="c:${client}" th:value="${c.id}" th:text="${c.clientname}"></option>
+        </select>
     </div>
-
-
 
     <div class="layui-form-item">
-        <label class="layui-form-label">缴费项目</label>
+        <label class="layui-form-label">收费项目名称</label>
         <div class="layui-input-block">
-            <input type="text" name="payproject" th:value="${am.payproject}"  lay-verify="title" autocomplete="off" disabled="disabled" class="layui-input">
+            <input type="text" name="payproject"   class="layui-input" id="patitemsname">
         </div>
     </div>
-
 
     <div class="layui-form-item">
         <label class="layui-form-label">收费金额</label>
-        <div class="layui-input-block" >
-            <input type="text" name="assessment"  id="assessment"  lay-verify="title"  class="layui-input" th:value="${am.assessment}"  disabled="disabled">
+        <div class="layui-input-block">
+            <input type="text" name="assessment"   class="layui-input" id="assessment">
         </div>
     </div>
 
     <div class="layui-form-item">
-        <label class="layui-form-label">缴费方式</label>
+        <label class="layui-form-label">付款方式</label>
         <div class="layui-input-block">
-            <select th:name="carporttid" lay-filter="aihao">
-                <option th:each="" th:value="现金" th:text="现金"></option>
-                <option th:each="" th:value="刷卡" th:text="刷卡"></option>
-                <option th:each="" th:value="转账" th:text="转账"></option>
+            <select name="paymentType" lay-filter="aihao">
+                <option th:value="现金">现金</option>
+                <option th:value="支付宝">支付宝</option>
+                <option th:value="微信">微信</option>
             </select>
         </div>
     </div>
@@ -56,28 +53,32 @@
     <div class="layui-inline">
         <label class="layui-form-label">收费时间</label>
         <div class="layui-input-inline">
-            <input type="text" name="collectDate" th:value="${am.collectDate}" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
-        </div>/
-    </div>
-    <div class="layui-form-item">
-        <label class="layui-form-label">收费员</label>
-        <div class="layui-input-block">
-            <select th:name="carporttid" lay-filter="aihao">
-                <option th:each="" th:value="燕世亮" th:text="燕世亮"></option>
-                <option th:each="" th:value="燕世亮" th:text="燕世亮"></option>
-                <option th:each="" th:value="燕世亮" th:text="燕世亮"></option>
-            </select>
+            <input type="text" name="collectDate" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
         </div>
     </div>
 
+    <div class="layui-form-item">
+        <label class="layui-form-label">收费员</label>
+        <div class="layui-input-block">
+            <div class="layui-input-block">
+                <input type="text" name="tollgatherer" class="layui-input" id="tollgatherer" th:value="盐适量" disabled="disabled">
+            </div>
+        </div>
+    </div>
 
-
-
+    <div class="layui-form-item">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <input type="text" name="fremark"   class="layui-input" id="fremark">
+        </div>
+    </div>
 
     <div style="margin-left: 210px">
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
         <button class="layui-btn layui-btn-normal" lay-submit="" lay-filter="tijiao">提交</button>
     </div>
 </form>
+
 
 <script type="text/javascript">
     layui.use(['form', 'layer', 'laydate','element'], function(){
@@ -91,28 +92,33 @@
             elem: '#date',
             trigger:'click'
         });
+
         //监听提交
         form.on('submit(tijiao)', function(data){
             //data.field表单所有信息
-            if($("#payproject").val()==""){
+            if($("#clientname").val()==""){
+                alert("客户姓名为空！") ;
+                return false;
+            }
+            if($("#patitemsname").val()==""){
                 alert("收费名称不能为空！") ;
                 return false;
             }
-            if($("#payitemsmoney").val()==""){
-                alert("执行金额为空！") ;
+            if($("#assessment").val()==""){
+                alert("收费金额为空！") ;
                 return false;
             }
             else {
-                $.post("upPay", data.field, function (result) {
+                $.post("addFee", data.field, function (result) {
                         if (result.data == false) {
-                            layer.msg(result.msg, {
+                            layer.msg(result.message, {
                                 icon: 1,
                                 time: 1000 //2秒关闭（如果不配置，默认是3秒）
                             })
 
                         }
                         else {
-                            layer.msg(result.msg, {
+                            layer.msg(result.message, {
                                     icon: 1,
                                     time: 1000 //2秒关闭（如果不配置，默认是3秒）
                                 },
@@ -131,3 +137,4 @@
 </script>
 
 </body>
+</html>

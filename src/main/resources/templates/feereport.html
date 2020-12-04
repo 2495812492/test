@@ -26,9 +26,8 @@
             <button class="layui-btn" data-type="reload" id="qxBtn">查看全部</button>
 </div>
 
-
-
 <table class="layui-hide" id="demo1" lay-filter="test"></table>
+
 <script>
     layui.use([ 'laypage', 'laydate','layer', 'table'], function(){
         var laydate = layui.laydate;
@@ -54,9 +53,10 @@
             ,cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
-                    ,{field: 'roomno', title: '房间编号', totalRowText: '合计：'}
+                    ,{field: 'feeID', title: '编号'}
+                    ,{field: 'roomNo', title: '房间编号', totalRowText: '合计：'}
                     ,{field: 'clientname', title: '客户姓名'}
-                    ,{field: 'patitemsName', title: '收费项目'}
+                    ,{field: 'payproject', title: '收费项目'}
                     ,{field: 'assessment', title: '收费金额',totalRow: true}
                     ,{field: 'paymentType', title: '付款方式'}
                     ,{field: 'collectDate', title: '收费时间'}
@@ -92,9 +92,27 @@
                 }
                 ,where: {
                     clientname: demoReload.val(),
-                    testh:testh.val()
+                    collectDate:testh.val()
                 }
             });
+        });
+
+        //新增
+        $("#addBtn").on('click',function () {
+            top.layer.open({
+                type:2,      //layer的5种层类型   0（信息框，默认）、1（页面层）、2（iframe层）、3（加载层）、4（tips层）
+                title: ['新增', 'font-size:18px;'],  //弹出框标题
+                area: ['800px','550px'],    //设置弹框的大小
+                shadeClose:true,          //点击遮罩层外区域关闭遮罩层
+                anim: 2,
+                closeBtn: 1,//弹出动画//弹出动画
+                content:'addFeereport'     //写方法的路径  进入页面  此处也和easyui相同
+            })
+        })
+        //    取消查询
+        var $ = layui.$;
+        $('#qxBtn').on('click', function(){
+            window.location.reload();
         });
     });
 </script>

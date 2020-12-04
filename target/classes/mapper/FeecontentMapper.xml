@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.feecontentMapper.FeecontentMapper">
+    <select id="getFeeListPage" parameterType="java.util.Map" resultType="Feecontent">
+        SELECT f.feeID,r.roomNo,c.clientname,b.roomID,b.payproject,f.balance,f.assessment,f.paymentType,f.collectDate,f.tollgatherer
+        FROM feecontent f
+        LEFT JOIN clientmessage c ON c.id = f.clientMessageId
+        LEFT JOIN  room r ON r.clientMessageId = c.id
+        LEFT JOIN  bill b ON b.roomID = r.id
+        <where>
+            <if test="clientname!=null and clientname!=''">
+                c.clientname like concat('%',concat(#{clientname},'%'))
+            </if>
+            <if test="collectDate!=null">
+                and f.collectDate &gt; #{collectDate}
+            </if>
+        </where>
+        LIMIT #{first},#{pageSize}
+    </select>
+
+
+    <select id="getCountFeeListPage" resultType="long" parameterType="Feecontent">
+        SELECT count(1)
+        FROM feecontent f
+        LEFT JOIN clientmessage c ON c.id = f.clientMessageId
+        LEFT JOIN  room r ON r.clientMessageId = c.id
+        LEFT JOIN  bill b ON b.roomID = r.id
+        <where>
+            <if test="clientname!=null and clientname!=''">
+                c.clientname like concat('%',concat(#{clientname},'%'))
+            </if>
+            <if test="collectDate!=null">
+                and f.collectDate &gt; #{collectDate}
+            </if>
+        </where>
+    </select>
+
+    <insert id="addFee" parameterType="Feecontent">
+        INSERT INTO feecontent(clientMessageId,balance,assessment,collectDate,tollgatherer,paymentType,fremark)
+        VALUES(#{clientMessageId},#{balance},#{assessment},#{collectDate},#{tollgatherer},#{paymentType},#{fremark})
+    </insert>
+
+    <select id="getFeeListByFeeID" parameterType="Integer" resultType="Feecontent">
+        SELECT f.feeID,r.roomNo,c.clientname,b.roomID,b.payproject,f.balance,f.assessment,f.paymentType,f.collectDate,f.tollgatherer
+        FROM feecontent f
+        LEFT JOIN clientmessage c ON c.id = f.clientMessageId
+        LEFT JOIN  room r ON r.clientMessageId = c.id
+        LEFT JOIN  bill b ON b.roomID = r.id
+        WHERE f.feeID = #{feeID}
+    </select>
+
+    <delete id="deleteFee" parameterType="Integer">
+        delete from feecontent where feeID=#{feeID}
+    </delete>
+</mapper>

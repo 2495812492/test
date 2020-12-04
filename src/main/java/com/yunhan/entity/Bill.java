@@ -1,18 +1,36 @@
 package com.yunhan.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldStrategy;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
+
+@TableName("bill")
 public class Bill {
+    @TableField(value = "billid",strategy = FieldStrategy.IGNORED)
     private int billid;
-    private int roomID;
+    @TableField("roomID")
+    private String roomID;
+    @TableField("endtime")
     private String endtime;
+    @TableField("payproject")
     private  String payproject;
+    @TableField("practical")
     private int  practical;
+    @TableField("price")
     private int price;
+    @TableField("assessment")
     private int assessment;
+    @TableField("remark")
     private String remark;
+    @TableField("homeNO")
     private String homeNO;
+    @TableField("meterReadTime")
     private String meterReadTime;
+    @TableField("patitemsName")
     private String patitemsName;
+    @TableField("utility")
     private int utility;
+    @TableField("payitemsmoney")
     private int payitemsmoney;
 
     public int getBillid() {
@@ -23,11 +41,11 @@ public class Bill {
         this.billid = billid;
     }
 
-    public int getRoomID() {
+    public String getRoomID() {
         return roomID;
     }
 
-    public void setRoomID(int roomID) {
+    public void setRoomID(String roomID) {
         this.roomID = roomID;
     }
 

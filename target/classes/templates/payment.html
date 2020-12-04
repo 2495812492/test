@@ -41,7 +41,7 @@
             , cols: [
                 [ //表头
                     {type: 'checkbox', fixed: 'left'}
-                    ,{field: 'roomID', title: '编号'}
+                    ,{field: 'feeID', title: '编号'}
                     ,{field: 'roomNo', title: '房间编号'}
                     ,{field: 'clientname', title: '客户姓名'}
                     ,{field: 'assessment', title: '应交金额'}
@@ -95,7 +95,7 @@
                     shadeClose: true,          //点击遮罩层外区域关闭遮罩层
                     area: ['580px', '500px'],    //弹出框大小
                     anim: 1,              //弹出动画
-                    content: 'selOne?roomid=' + data.roomID
+                    content: 'selOne?roomid=' + data.feeID
                 });
             }
         });
@@ -112,7 +112,7 @@
                         area: ['800px','350px'],    //设置弹框的大小
                         shadeClose:true,          //点击遮罩层外区域关闭遮罩层
                         anim: 2,              //弹出动画
-                        content:'add'     //写方法的路径  进入页面  此处也和easyui相同
+                        content:'addFeereport'     //写方法的路径  进入页面  此处也和easyui相同
                     })
                     break;
                 case 'update':
@@ -130,7 +130,7 @@
                             shadeClose:true,          //点击遮罩层外区域关闭遮罩层
                             area: ['580px', '500px'],    //弹出框大小
                             anim: 1,              //弹出动画
-                            content:'selOne?rooomid='+checkStatus.data[0].roomID
+                            content:'selOne?roomid='+checkStatus.data[0].feeID
                         });
                     }
                     break;
@@ -140,10 +140,10 @@
                     } else {
                         //删除
                         layer.confirm('真的要删除吗？', function () {
-                            $.post("delete",{'id':checkStatus.data[0].id},function(result)
+                            $.post("delete",{'feeID':checkStatus.data[0].feeID},function(result)
                                 {
                                     layer.msg(
-                                        result.msg, {
+                                        result.message, {
                                             icon: 1,
                                             time: 1000 //2秒关闭（如果不配置，默认是3秒）
                                         }, function(){

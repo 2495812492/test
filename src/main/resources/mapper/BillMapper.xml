@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.billMapper.BillMapper">
+    <select id="findBillByRoomIdAndPayproject" parameterType="Bill" resultType="Integer">
+        SELECT count(1) FROM bill WHERE roomID=#{roomID} and payproject=#{payproject}
+    </select>
+
+    <insert id="addBill" parameterType="Bill">
+        INSERT INTO Bill(roomID,endtime,payproject,practical,price,assessment,remark)
+        VALUES (#{roomID},#{endtime},#{payproject},#{practical},#{price},#{assessment},#{remark})
+    </insert>
+</mapper>
