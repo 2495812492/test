@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yunhan.mapper.repair.RepairListMapper">
+    <select id="selectAll" resultType="map" parameterType="map" >
+        select * from repairlist r LEFT JOIN room ro ON r.roomid= ro.roomid LEFT JOIN clientmessage c ON ro.clientmessageId=c.clientmessageId
+        <where>1=1
+            <if test="clientname!=null and clientname!=''">
+                and c.clientname like concat('%',concat(#{clientname},'%'))
+            </if>
+        </where>LIMIT #{begin},#{end}
+    </select>
+
+    <select id="selectCount" resultType="Long">
+        select count(*) from repairlist r LEFT JOIN room ro ON r.roomid= ro.roomid LEFT JOIN clientmessage c ON ro.clientmessageId=c.clientmessageId
+        <where>1=1
+            <if test="clientname!=null and clientname!=''">
+                and c.clientname like concat('%',concat(#{clientname},'%'))
+            </if>
+        </where>
+    </select>
+
+    <insert id="addBtn">
+         insert into repairList(unitnumber,floornumber,roomid,contactsnumber,repairtype,repairproject,problemdescription,timeofappointment,
+	        completiontime,finishren,completeremarks,source)
+        values(#{unitnumber},#{floornumber},#{roomid},#{contactsnumber},#{repairtype},#{repairproject},#{problemdescription},#{timeofappointment},
+            #{completiontime},#{finishren},#{completeremarks},'WEB系统');
+    </insert>
+
+    <select id="cselRooms" parameterType="RepairList" resultType="RepairList">
+        select * from room
+    </select>
+
+    <select id="selectUser" parameterType="User" resultType="User">
+        select * from sys_user
+    </select>
+
+    <select id="selectRepairListById" parameterType="int" resultType="RepairList">
+        SELECT * FROM repairlist r LEFT JOIN room ro ON r.`roomid`=ro.`roomID` LEFT JOIN clientmessage c ON ro.`clientMessageId`=c.`clientMessageId`
+        WHERE repairListId=#{repairListId}
+    </select>
+
+    <select id="RepairListById2" parameterType="int" resultType="RepairList">
+        SELECT * FROM repairlist r LEFT JOIN room ro ON r.`roomid`=ro.`roomID` LEFT JOIN clientmessage c ON ro.`clientMessageId`=c.`clientMessageId`
+        WHERE repairListId=#{repairListId}
+    </select>
+
+    <select id="selectRepairListById3" parameterType="int" resultType="RepairList">
+        SELECT * FROM repairlist r LEFT JOIN room ro ON r.`roomid`=ro.`roomID` LEFT JOIN clientmessage c ON ro.`clientMessageId`=c.`clientMessageId`
+        WHERE repairListId=#{repairListId}
+    </select>
+
+    <select id="selectRepairListById4" parameterType="int" resultType="RepairList">
+        SELECT * FROM repairlist r LEFT JOIN room ro ON r.`roomid`=ro.`roomID` LEFT JOIN clientmessage c ON ro.`clientMessageId`=c.`clientMessageId`
+        WHERE repairListId=#{repairListId}
+    </select>
+
+    <update id="UpdateSl">
+        UPDATE repairlist SET statu=7,finishRen=#{finishren},acceptedRemarks=#{acceptedremarks},
+        workRemarks=#{workremarks},requiredCompletionTime=#{requiredcompletiontime}
+        WHERE repairListId=#{repairlistid}
+    </update>
+
+    <update id="UpdateSf">
+        UPDATE repairlist SET statu=1,chargeStatus=1,chargeProject=#{chargeproject},chargeType=#{chargetype},price=#{price},finishRen=#{finishren}
+        WHERE repairListId=#{repairlistid}
+    </update>
+
+    <update id="UpdateYwwc">
+        UPDATE repairlist SET statu=10,finishRen=#{finishren},completeRemarks=#{completeremarks},degreeOfSatisfaction=#{degreeofsatisfaction}
+        WHERE repairListId=#{repairlistid}
+    </update>
+
+    <delete id="Delete">
+        delete from repairlist where repairListId=#{repairlistid}
+    </delete>
+</mapper>
